@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily, screens } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -17,7 +17,12 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'xs': '475px',
+      ...screens,
+    },
     extend: {
+
       fontFamily: {
         text: ["var(--font-text)", ...fontFamily.sans],
         heading: ["var(--font-heading)", ...fontFamily.sans]
@@ -31,7 +36,6 @@ module.exports = {
         muted: "hsl(var(--muted))",
         accent: "hsl(var(--accent))",
         card: "hsl(var(--card))",
-        foreground: "hsl(var(--card-foreground))",
       },
       keyframes: {
         "accordion-down": {
