@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const MainLayout = ({ children }) => {
   const pathname = usePathname();
 
-  console.log(pathname);
   return (
     <>
       <Header animateScroll={pathname === "/"} />

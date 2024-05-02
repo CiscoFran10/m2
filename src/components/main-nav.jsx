@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import useHash from "@/hooks/use-hash";
 
 export function MainNav({ headerHasScrolled }) {
   const pathname = usePathname();
@@ -12,12 +13,10 @@ export function MainNav({ headerHasScrolled }) {
   return (
     <nav className="items-center hidden gap-4 text-sm md:flex lg:gap-6">
       <Link
-        href="#about"
+        href="/#about"
         className={cn(
           "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
-          pathname === "/#about"
-            ? "text-accent border-b-accent"
-            : headerHasScrolled
+          headerHasScrolled
             ? "text-primary hover:text-primary/80"
             : "text-secondary hover:text-secondary/80"
         )}
@@ -29,7 +28,7 @@ export function MainNav({ headerHasScrolled }) {
         href="/projects"
         className={cn(
           "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
-          pathname?.startsWith("/projects")
+          pathname === "/projects"
             ? "text-accent border-b-accent"
             : headerHasScrolled
             ? "text-primary hover:text-primary/80"
@@ -40,12 +39,10 @@ export function MainNav({ headerHasScrolled }) {
       </Link>
 
       <Link
-        href="#contact"
+        href="/#contact"
         className={cn(
           "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
-          pathname === "/#contact"
-            ? "text-accent border-b-accent"
-            : headerHasScrolled
+          headerHasScrolled
             ? "text-primary hover:text-primary/80"
             : "text-secondary hover:text-secondary/80"
         )}

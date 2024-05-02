@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MainNav } from "./main-nav";
 import Logo from "./logo";
 import { cn } from "@/lib/utils";
+import { MobileNav } from "./mobile-nav";
 
 const Header = ({ animateScroll }) => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
@@ -17,8 +18,6 @@ const Header = ({ animateScroll }) => {
     });
   }, []);
 
-  console.log(animateScroll);
-
   const headerHasScrolled = !animateScroll ? true : scrollPosition > 100;
 
   return (
@@ -28,7 +27,7 @@ const Header = ({ animateScroll }) => {
         headerHasScrolled ? "bg-background py-2" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className={cn("container flex items-center justify-between")}>
         <Link href="/">
           <Logo
             className={cn(
@@ -42,6 +41,7 @@ const Header = ({ animateScroll }) => {
         </Link>
 
         <MainNav headerHasScrolled={headerHasScrolled} />
+        <MobileNav />
       </div>
     </header>
   );
