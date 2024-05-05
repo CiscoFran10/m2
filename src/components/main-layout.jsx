@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./footer";
 import Header from "./header";
 import { usePathname } from "next/navigation";
 
@@ -10,6 +11,7 @@ const MainLayout = ({ children }) => {
     <>
       <Header animateScroll={pathname === "/"} />
       {children}
+      <Footer />
     </>
   );
 };

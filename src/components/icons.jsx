@@ -148,4 +148,19 @@ export const Icons = {
       />
     </svg>
   ),
+  arrowRight: (props) => (
+    <svg
+      width={23}
+      height={17}
+      viewBox="0 0 23 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M13.865 16.955l-1.09-1.105 6.296-6.28H.481V8.036h18.59l-6.295-6.28 1.09-1.104 8.172 8.152-8.173 8.152z"
+        fill="currentColor"
+      />
+    </svg>
+  ),
 };

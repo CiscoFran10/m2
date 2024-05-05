@@ -17,10 +17,21 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-primary hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        transparent:
+          "border border-input text-white bg-transparentt hover:bg-white hover:text-black",
+        filter:
+          "font-heading font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary/80 hover:text-primary",
+        filterActive:
+          "font-heading font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary border-b-primary",
+        neutral:
+          "font-heading font-bold tracking-wider border-none bg-transparent text-white",
+
       },
       size: {
         default: "h-10 px-4 py-2",
+        auto: "h-max w-max px-1",
         sm: "h-9 px-3",
+        md: "h-10 px-4 py-6",
         lg: "h-11 px-8",
         icon: "h-10 w-10",
       },
