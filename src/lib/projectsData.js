@@ -20,7 +20,7 @@ const projectsList = [
     },
     {
         title: "Projeto 2",
-        endpoint: "rojeto-2",
+        endpoint: "projeto-2",
         description: "Descrição do Projeto 2",
         emphasisContent: true,
         coverImage: Cover2,
@@ -30,7 +30,7 @@ const projectsList = [
     },
     {
         title: "Projeto 3",
-        endpoint: "rojeto-3",
+        endpoint: "projeto-3",
         description: "Descrição do Projeto 3",
         emphasisContent: false,
         coverImage: Cover3,
@@ -40,7 +40,7 @@ const projectsList = [
     },
     {
         title: "Projeto 4",
-        endpoint: "rojeto-4",
+        endpoint: "projeto-4",
         description: "Descrição do Projeto 4",
         emphasisContent: true,
         coverImage: Cover4,
@@ -50,7 +50,7 @@ const projectsList = [
     },
     {
         title: "Projeto 5",
-        endpoint: "rojeto-5",
+        endpoint: "projeto-5",
         description: "Descrição do Projeto 5",
         emphasisContent: false,
         coverImage: Cover5,
@@ -60,7 +60,7 @@ const projectsList = [
     },
     {
         title: "Projeto 6",
-        endpoint: "rojeto-6",
+        endpoint: "projeto-6",
         description: "Descrição do Projeto 6",
         emphasisContent: false,
         coverImage: Cover1,

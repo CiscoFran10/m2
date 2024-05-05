@@ -49,7 +49,7 @@ export function ProjectCard({
                         size="auto"
                         className="flex justify-center w-full transition ease-in-out delay-150 duration-300 scale-105 hover:scale-125"
                     >
-                        <Link href={`/${endpoint}`}>
+                        <Link href={`/projects/${endpoint}`}>
                             <Icons.arrowRight className="text-white" />
                         </Link>
                     </Button>
