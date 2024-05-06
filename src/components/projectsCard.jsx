@@ -12,10 +12,7 @@ import { Icons } from "./icons";
 export function ProjectCard({
     title,
     endpoint,
-    description,
-    emphasisContent,
     coverImage,
-    category,
     locationType,
 }) {
     const pathname = usePathname();
