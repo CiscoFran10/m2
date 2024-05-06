@@ -1,5 +1,6 @@
 'use client'
 
+import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import SocialLinks from "@/components/social-links";
@@ -8,11 +9,9 @@ import { Accordion, AccordionTrigger, AccordionContent, AccordionItem } from "@/
 import Marquee from "react-fast-marquee";
 import { ArrowUpIcon, CalendarIcon } from "@radix-ui/react-icons";
 import { Icons } from "@/components/icons";
-import Logo from "@/components/logo";
 import Link from 'next/link'
 import { Button } from "@/components/ui/button";
-import { ArrowUp, ArrowUpToLineIcon, ArrowUpWideNarrow } from "lucide-react";
-import Footer from "@/components/footer";
+import { motion } from 'framer-motion'
 
 const banners = [{
   title: ('Contruindo sua visão, <br /> criando realidade'),
@@ -26,22 +25,36 @@ const banners = [{
 }]
 
 export default function Home() {
+  const [api, setApi] = React.useState()
+  const [current, setCurrent] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
   return (
     <>
       <main >
-        <Carousel
+        <Carousel setApi={setApi}
           className='relative'
-          opts={{ loop: true }}
+          opts={{ loop: true, watchDrag: false }}
           plugins={[
             Autoplay({
-              delay: 10000,
+              delay: 8000,
             }),
           ]}>
 
           <SocialLinks className={'hidden lg:flex absolute z-20 left-7 top-1/2 -translate-y-1/2'} />
 
           <CarouselContent>
-
             {banners.map((item) => (
 
               <CarouselItem className='relative pl-0' key={item.image}>
@@ -50,9 +63,11 @@ export default function Home() {
                 }}
                   className='relative grid w-full min-h-screen overflow-hidden place-content-center' >
 
-                  <div className='container flex flex-col gap-10 before:bg-black/70 before:h-1/2 before:w-[340px] before:top-0 before:-translate-x-1/2 before:absolute'>
-                    <h1 className='relative text-5xl leading-tight uppercase text-secondary font-heading'>Contruindo sua visão, <br /> criando realidade</h1>
-                    <p className='text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</p>
+                  <div className={'container flex flex-col gap-10 transition-all  before:bg-black/70 before:h-1/2 before:w-[340px] before:top-0 before:-translate-x-1/2 before:absolute'}>
+                    <div className='overflow-hidden'>
+                      <motion.h1 key={current} initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className='relative text-5xl leading-tight uppercase text-secondary font-heading '>Contruindo sua visão, <br /> criando realidade</motion.h1>
+                    </div>
+                    <motion.p key={current} initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.4 }} className='text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
 
                     <SocialLinks className={'flex-row lg:hidden '} />
                   </div>
