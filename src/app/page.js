@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselIndicator, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 import SocialLinks from "@/components/social-links";
 import Image from "next/image";
@@ -11,72 +11,87 @@ import { ArrowUpIcon, CalendarIcon } from "@radix-ui/react-icons";
 import { Icons } from "@/components/icons";
 import Link from 'next/link'
 import { Button } from "@/components/ui/button";
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import Project from "./projects/[id]/page";
+import { ProjectCard } from "@/components/projectsCard";
+import { cn } from "@/lib/utils";
+import { X } from "lucide-react";
 
 const banners = [{
-  title: ('Contruindo sua visão, <br /> criando realidade'),
+  title: (<>Contruindo sua visão, <br /> criando realidade</>),
   description: 'Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.',
   image: '/banner.png',
 },
 {
-  title: ('Contruindo sua visão, <br /> criando realidade'),
+  title: (<>Transformando ideias, <br /> em estruturas</>),
   description: 'Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.',
   image: '/edificio.jpg',
 }]
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.6,
+    }
+  }
+}
+
+const carousel_item = {
+  hidden: { opacity: 0, x: -40, },
+  show: { opacity: 1, x: 0, transition: { duration: 0.4 } }
+}
+
 export default function Home() {
-  const [api, setApi] = React.useState()
   const [current, setCurrent] = React.useState(0)
 
+
   React.useEffect(() => {
-    if (!api) {
-      return
-    }
+    const interval = setInterval(() => {
+      setCurrent((prevIndex) =>
+        prevIndex === banners.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
 
-    setCurrent(api.selectedScrollSnap() + 1)
+    return () => clearInterval(interval);
+  }, []);
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
 
   return (
     <>
       <main >
-        <Carousel setApi={setApi}
-          className='relative'
-          opts={{ loop: true, watchDrag: false }}
-          plugins={[
-            Autoplay({
-              delay: 8000,
-            }),
-          ]}>
-
+        <div className='relative'>
           <SocialLinks className={'hidden lg:flex absolute z-20 left-7 top-1/2 -translate-y-1/2'} />
 
-          <CarouselContent>
-            {banners.map((item) => (
-
-              <CarouselItem className='relative pl-0' key={item.image}>
+          <ul className='grid'>
+            {banners.map((item, index) => {
+              return <li className={cn('col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-1000', current === index ? 'opacity-100' : 'opacity-0')} key={index} >
                 <div style={{
                   background: `linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0,0,0,0.5)) , url(${item.image}) no-repeat center center/cover`
                 }}
-                  className='relative grid w-full min-h-screen overflow-hidden place-content-center' >
+                  className='relative grid justify-center w-full min-h-screen overflow-hidden' >
 
-                  <div className={'container flex flex-col gap-10 transition-all  before:bg-black/70 before:h-1/2 before:w-[340px] before:top-0 before:-translate-x-1/2 before:absolute'}>
-                    <div className='overflow-hidden'>
-                      <motion.h1 key={current} initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className='relative text-5xl leading-tight uppercase text-secondary font-heading '>Contruindo sua visão, <br /> criando realidade</motion.h1>
-                    </div>
-                    <motion.p key={current} initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.4 }} className='text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
+                  <div className={'gap-10 h-full justify-center grid'}>
+                    <div className=' bg-black bg-black/30 w-[340px] block col-start-1 col-end-3 row-start-1 row-end-3 -translate-x-20 h-[70%]'></div>
 
-                    <SocialLinks className={'flex-row lg:hidden '} />
+                    <motion.div
+                      key={current}
+                      variants={container}
+                      initial="hidden"
+                      animate="show"
+                      className='relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-10 overflow-hidden'>
+                      <motion.h1 variants={carousel_item} className='relative text-5xl leading-tight uppercase text-secondary font-heading '>{item.title}</motion.h1>
+                      <motion.p variants={carousel_item} className='text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
+
+                      <SocialLinks className={'flex-row lg:hidden '} />
+                    </motion.div>
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
-
-          </CarouselContent>
-        </Carousel>
+              </li>
+            })}
+          </ul>
+        </div>
 
         <div className='relative'>
           <div className='absolute inset-0 z-10 flex justify-center pointer-events-none'>
@@ -87,7 +102,7 @@ export default function Home() {
             </div>
           </div>
 
-          <section id='about' className='container flex flex-col gap-5 pt-32 bg-[url(/blueprint.jpg)] bg-cover min-h-screen '>
+          <section initial={{ y: 100, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: '1000px' }} id='about' className='container flex flex-col gap-5 pt-32 bg-[url(/blueprint.jpg)] bg-cover min-h-screen '>
             <h2 className='title'>SERVIÇOS</h2>
             <p className='text-3xl font-bold'>Descubra a elegância na arquitetura moderna</p>
 
@@ -144,41 +159,43 @@ export default function Home() {
             </div>
 
             <Carousel opts={{
+              align: 'start',
               breakpoints: {
                 '(min-width: 768px)': { slidesToScroll: 2 }
               }
-            }} className='mt-16' >
-              <CarouselContent>
-                <CarouselItem className='relative min-h-[600px] pl-0 sm:basis-1/2 md:basis-1/3 lg:basis-1/4'>
-                  <Image className='absolute inset-0 object-cover object-center w-full h-full objc' src='/project-1.avif' alt='' width={300} height={800} />
+            }} className='relative z-20 mt-16' >
+              <CarouselContent className='-ml-0'>
+                <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
+                  <ProjectCard locationType='INTERIOR' title='cotton house' coverImage={'/project-1.avif'} endpoint={'projeto-1'} />
                 </CarouselItem>
-                <CarouselItem className='relative min-h-[600px] pl-0 sm:basis-1/2 md:basis-1/3 lg:basis-1/4'>
-                  <Image className='absolute inset-0 object-cover object-center w-full h-full' src='/project-2.avif' alt='' width={300} height={800} />
+                <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
+                  <ProjectCard locationType='EXTERIOR' title='cotton house' coverImage={'/project-2.avif'} endpoint={'projeto-2'} />
                 </CarouselItem>
-                <CarouselItem className='relative min-h-[600px] pl-0 sm:basis-1/2 md:basis-1/3 lg:basis-1/4'>
-                  <Image className='absolute inset-0 object-cover object-center w-full h-full' src='/project-3.avif' alt='' width={300} height={800} />
+                <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
+                  <ProjectCard locationType='COMERCIAL' title='cotton house' coverImage={'/project-3.avif'} endpoint={'projeto-3'} />
                 </CarouselItem>
-                <CarouselItem className='relative min-h-[600px] pl-0 sm:basis-1/2 md:basis-1/3 lg:basis-1/4'>
-                  <Image className='absolute inset-0 object-cover object-center w-full h-full' src='/project-4.avif' alt='' width={300} height={800} />
+                <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
+                  <ProjectCard locationType='RESIDENCIAL' title='cotton house' coverImage={'/project-4.avif'} endpoint={'projeto-4'} />
                 </CarouselItem>
-
-                <CarouselItem className='relative min-h-[600px] pl-0 sm:basis-1/2 md:basis-1/3 lg:basis-1/4'>
-                  <Image className='absolute inset-0 object-cover object-center w-full h-full' src='/project-5.avif' alt='' width={300} height={800} />
+                <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
+                  <ProjectCard locationType='INTERIOR' title='cotton house' coverImage={'/project-5.avif'} endpoint={'projeto-5'} />
                 </CarouselItem>
-
               </CarouselContent>
+              <CarouselIndicator />
               <CarouselNext />
               <CarouselPrevious />
+
+              <div className='flex justify-center mt-8 sm:mt-0'>
+                <Button asChild size='lg' className='flex-col gap-3 text-sm border-4 rounded-full sm:text-base sm:-translate-y-14 size-28 sm:size-40 border-muted'>
+                  <Link href='/projects'>
+                    <ArrowUpIcon className='animate-bounce size-6 sm:size-8' />
+                    Ver todos
+                  </Link>
+                </Button>
+              </div>
             </Carousel>
 
-            <div className='flex justify-center'>
-              <Button asChild size='lg' className='flex-col gap-3 text-base border-4 rounded-full -translate-y-14 size-40 border-muted'>
-                <Link href='/projects'>
-                  <ArrowUpIcon className='animate-bounce size-8' />
-                  Ver todos
-                </Link>
-              </Button>
-            </div>
+
           </section>
 
           <section className='container mt-24'>
