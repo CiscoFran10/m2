@@ -13,7 +13,7 @@ const SocialLinks = ({ className, ...props }) => {
       </li>
 
       <li className="transition-colors text-muted hover:text-accent animate-">
-        <a href="">
+        <a href="https://www.instagram.com/mao2.arquitetura" target="_blank">
           <Icons.instagram className="size-8" />
           <span className="sr-only">Instagram</span>
         </a>
@@ -26,7 +26,7 @@ const SocialLinks = ({ className, ...props }) => {
         </a>
       </li>
       <li className="transition-colors text-muted hover:text-accent">
-        <a href="">
+        <a target="_blank" href="https://wa.link/mc2cqr">
           <Icons.whatsapp className="size-8" />
           <span className="sr-only">Whatsapp</span>
         </a>

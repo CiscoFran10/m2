@@ -29,9 +29,7 @@ const banners = [{
 }]
 
 const container = {
-  hidden: { opacity: 0 },
   show: {
-    opacity: 1,
     transition: {
       delayChildren: 0.6,
     }
@@ -72,7 +70,7 @@ export default function Home() {
                 }}
                   className='relative grid justify-center w-full min-h-screen overflow-hidden' >
 
-                  <div className={'gap-10 h-full justify-center grid'}>
+                  <div className={'gap-10 h-full justify-center grid container'}>
                     <div className=' bg-black bg-black/30 w-[340px] block col-start-1 col-end-3 row-start-1 row-end-3 -translate-x-20 h-[70%]'></div>
 
                     <motion.div
@@ -80,9 +78,9 @@ export default function Home() {
                       variants={container}
                       initial="hidden"
                       animate="show"
-                      className='relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-10 overflow-hidden'>
-                      <motion.h1 variants={carousel_item} className='relative text-5xl leading-tight uppercase text-secondary font-heading '>{item.title}</motion.h1>
-                      <motion.p variants={carousel_item} className='text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
+                      className='relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-6 overflow-hidden sm:gap-10'>
+                      <motion.h1 variants={carousel_item} className='relative text-3xl leading-tight uppercase sm:text-5xl text-secondary font-heading '>{item.title}</motion.h1>
+                      <motion.p variants={carousel_item} className='text-sm sm:text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
 
                       <SocialLinks className={'flex-row lg:hidden '} />
                     </motion.div>
