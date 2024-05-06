@@ -62,30 +62,25 @@ export default function Home() {
         <div className='relative'>
           <SocialLinks className={'hidden lg:flex absolute z-20 left-7 top-1/2 -translate-y-1/2'} />
 
-          <ul className='grid'>
+          <ul className='grid w-full'>
             {banners.map((item, index) => {
-              return <li className={cn('col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-1000', current === index ? 'opacity-100' : 'opacity-0')} key={index} >
-                <div style={{
-                  background: `linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0,0,0,0.5)) , url(${item.image}) no-repeat center center/cover`
-                }}
-                  className='relative grid justify-center w-full min-h-screen overflow-hidden' >
+              return <li style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0,0,0,0.5)) , url(${item.image}) no-repeat center center/cover`
+              }} className={cn('relative grid justify-center w-full min-h-screen overflow-hidden col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-1000', current === index ? 'opacity-100' : 'opacity-0')} key={index} >
 
-                  <div className={'gap-10 h-full justify-center grid container'}>
-                    <div className=' bg-black bg-black/30 w-[340px] block col-start-1 col-end-3 row-start-1 row-end-3 -translate-x-20 h-[70%]'></div>
+                <div className=' bg-black bg-black/30 w-[340px] col-start-1 col-end-3 row-start-1 row-end-3 -translate-x-20 h-[70%] hidden sm:block'></div>
 
-                    <motion.div
-                      key={current}
-                      variants={container}
-                      initial="hidden"
-                      animate="show"
-                      className='relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-6 overflow-hidden sm:gap-10'>
-                      <motion.h1 variants={carousel_item} className='relative text-3xl leading-tight uppercase sm:text-5xl text-secondary font-heading '>{item.title}</motion.h1>
-                      <motion.p variants={carousel_item} className='text-sm sm:text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
+                <motion.div
+                  key={current}
+                  variants={container}
+                  initial="hidden"
+                  animate="show"
+                  className='container relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-6 overflow-hidden sm:gap-10'>
+                  <motion.h1 variants={carousel_item} className='relative text-3xl leading-tight uppercase sm:text-5xl text-secondary font-heading '>{item.title}</motion.h1>
+                  <motion.p variants={carousel_item} className='text-sm sm:text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
 
-                      <SocialLinks className={'flex-row lg:hidden '} />
-                    </motion.div>
-                  </div>
-                </div>
+                  <SocialLinks className={'flex-row lg:hidden '} />
+                </motion.div>
               </li>
             })}
           </ul>
