@@ -23,7 +23,7 @@ const Project = () => {
             asChild
             variant="neutral"
             size="auto"
-            className="flex mr-auto mt-20 md:mt-32 mb-12 md:mb-14 transition ease-in-out delay-150 duration-300 scale-[2.5] hover:scale-[3]"
+            className="flex mr-auto mt-20 md:mt-32 mb-12 md:mb-14 transition ease-in-out delay-150 duration-300 scale-[1.7] md:scale-[2.5] md:hover:scale-[3]"
           >
             <Link href={`/projects`}>
               <Icons.arrow className="text-primary hover:text-accent" />
