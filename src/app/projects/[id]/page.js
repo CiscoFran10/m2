@@ -4,17 +4,33 @@ import React from "react";
 import { useParams } from "next/navigation";
 import projectsList from "@/lib/projectsData";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Icons } from "@/components/icons";
 
 const Project = () => {
   const params = useParams();
   const currentProject = projectsList.find(
     (project) => params.id === project.endpoint
   );
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <>
       <main className="mt-14">
-        <section className="container mt-28 md:mt-44 mb-[82px] sm:mb-[168px] md:mb-[248px] flex flex-col md:flex-row gap-20 md:justify-between" >
+        <div className="flex justify-end container">
+          <Button
+            asChild
+            variant="neutral"
+            size="auto"
+            className="flex mr-auto mt-20 md:mt-32 mb-12 md:mb-14 transition ease-in-out delay-150 duration-300 scale-[2.5] hover:scale-[3]"
+          >
+            <Link href={`/projects`}>
+              <Icons.arrow className="text-primary hover:text-accent" />
+            </Link>
+          </Button>
+        </div>
+        <section className="container mb-[82px] sm:mb-[168px] md:mb-[248px] flex flex-col md:flex-row gap-20 md:justify-between" >
           <div className="flex flex-col gap-4 w-full md:max-w-[462px] md:min-w-[300px]">
             <h1 className="title text-base md:text-lg text-center">
               O PROJETO
