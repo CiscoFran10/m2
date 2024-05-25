@@ -75,6 +75,18 @@ export function MobileNav({ headerHasScrolled }) {
           </Link>
 
           <Link
+            href="/#imprensa"
+            className={cn(
+              "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
+              hash === "imprensa"
+                ? "text-accent border-b-accent"
+                : "text-primary hover:text-primary/80"
+            )}
+          >
+            IMPRENSA
+          </Link>
+
+          <Link
             href="/#contact"
             className={cn(
               "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",

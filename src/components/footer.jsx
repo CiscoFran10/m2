@@ -19,7 +19,7 @@ const Footer = () => {
 
           <nav className="flex items-center gap-6 text-sm">
             <Link
-              href="#about"
+              href="/"
               className={
                 "font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent"
               }
@@ -28,7 +28,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="#about"
+              href="/#about"
               className={
                 "font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent"
               }
@@ -46,7 +46,16 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="#contact"
+              href="/#imprensa"
+              className={
+                "font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent"
+              }
+            >
+              IMPRENSA
+            </Link>
+
+            <Link
+              href="/#contact"
               className={
                 "font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent"
               }

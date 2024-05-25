@@ -68,16 +68,12 @@ export default function Home() {
                 background: `linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0,0,0,0.5)) , url(${item.image}) no-repeat center center/cover`
               }} className={cn('relative grid justify-center w-full min-h-screen overflow-hidden col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-1000', current === index ? 'opacity-100' : 'opacity-0')} key={index} >
 
-                <div className=' bg-black bg-black/30 w-[340px] col-start-1 col-end-3 row-start-1 row-end-3 -translate-x-20 h-[70%] hidden sm:block'></div>
-
                 <motion.div
                   key={current}
                   variants={container}
                   initial="hidden"
                   animate="show"
                   className='container relative flex flex-col justify-center col-start-1 col-end-3 row-start-1 row-end-3 gap-6 overflow-hidden sm:gap-10'>
-                  <motion.h1 variants={carousel_item} className='relative text-3xl leading-tight uppercase sm:text-5xl text-secondary font-heading '>{item.title}</motion.h1>
-                  <motion.p variants={carousel_item} className='text-sm sm:text-lg max-w-[50ch] text-secondary font-light'>Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.</motion.p>
 
                   <SocialLinks className={'flex-row lg:hidden '} />
                 </motion.div>
@@ -97,31 +93,29 @@ export default function Home() {
 
           <section initial={{ y: 100, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: '1000px' }} id='about' className='container flex flex-col gap-5 pt-32 bg-[url(/blueprint.jpg)] bg-cover min-h-screen '>
             <h2 className='title'>SERVIÇOS</h2>
-            <p className='text-3xl font-bold'>Descubra a elegância na arquitetura moderna</p>
-
 
             <div className='grid gap-10 mt-10 md:grid-cols-[0.8fr_1fr]'>
               <Image className='relative w-full' src='/about.png' alt='' width={500} height={650} />
 
               <Accordion defaultValue='item-1' type="multiple" collapsible={'true'}>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>PROJETOS RESIDENCIAIS</AccordionTrigger>
+                  <AccordionTrigger>PROJETOS DE ARQUITETURA</AccordionTrigger>
                   <AccordionContent>
-                    Project management is a critical function for any company, particularly those involved in complex projects or construction work. Project management involves planning, organizing, and executing projects efficiently and effectively, from conception to completion Overall, project management is an essential service for companies involved in complex projects, ensuring that projects are completed on time, within budget, and to the client&apos;s satisfaction. By working with an experienced project management company, clients can focus on their core business activities while having confidence that their projects are being managed effectively.
+                    Realizamos projetos de interiores e arquitetura para áreas residenciais, corporativas e comerciais, sejam novos ou de reforma, buscando atender as demandas e potencialidades de cada localidade e cliente.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>PROJETOS COMERCIAIS</AccordionTrigger>
+                  <AccordionTrigger>ACOMPANHAMENTO DE PROJETOS</AccordionTrigger>
                   <AccordionContent>
-                    Project management is a critical function for any company, particularly those involved in complex projects or construction work. Project management involves planning, organizing, and executing projects efficiently and effectively, from conception to completion Overall, project management is an essential service for companies involved in complex projects, ensuring that projects are completed on time, within budget, and to the client&apos;s satisfaction. By working with an experienced project management company, clients can focus on their core business activities while having confidence that their projects are being managed effectively.
+                    Para que se garanta que o que foi designado e desenhado no Projeto de arquitetura, utilizamos nosso conhecimento e estruturas para oferecer suporte ao cliente nas fases de orçamentos, contratação e execução de obras, auxiliando a gerenciar processos, cronograma de etapas e todos os passos necessários para a concretização do desejo do Projeto de arquitetura.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>GERENCIAMENTO DE PROJETOS</AccordionTrigger>
+                  <AccordionTrigger>CONSTRUÇÃO E REFORMA</AccordionTrigger>
                   <AccordionContent>
-                    Project management is a critical function for any company, particularly those involved in complex projects or construction work. Project management involves planning, organizing, and executing projects efficiently and effectively, from conception to completion Overall, project management is an essential service for companies involved in complex projects, ensuring that projects are completed on time, within budget, and to the client&apos;s satisfaction. By working with an experienced project management company, clients can focus on their core business activities while having confidence that their projects are being managed effectively.
+                    Ajudamos ao cliente ofertando opções de mão de obra e fornecedores para a construção ou reforma de seu projeto, que pode incluir áreas parciais, como banheiros, salas ou cozinha ou mesmo uma reforma completa, incluindo construções de nova residências, casas, apartamentos e outros.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -217,7 +211,7 @@ export default function Home() {
           </section>
 
 
-          <section className='py-20 mt-32 bg-[url(/press.jpg)] bg-center relative z-20'>
+          <section id='imprensa' className='py-20 mt-32 bg-[url(/press.jpg)] bg-center relative z-20'>
             <div className='container'>
 
               <h2 className='title text-muted before:bg-muted'>IMPRENSA</h2>
@@ -275,20 +269,6 @@ export default function Home() {
                   <a className='mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit'>LER MAIS</a>
                 </div>
 
-                <div className='md:row-span-2'>
-                  <Image className='w-full ' src='/project-1.avif' alt='' width={300} height={200} />
-                  <h3 className='mt-2 text-secondary'>Arquiteura moderna</h3>
-                  <span className='flex items-center gap-2 text-xs text-muted'><CalendarIcon />18 de maio, 2023</span>
-                  <a className='mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit'>LER MAIS</a>
-                </div>
-
-                <div className='md:row-span-2'>
-                  <Image className='w-full' src='/project-1.avif' alt='' width={300} height={200} />
-                  <h3 className='mt-2 text-secondary'>Arquiteura moderna</h3>
-                  <span className='flex items-center gap-2 text-xs text-muted'><CalendarIcon />18 de maio, 2023</span>
-                  <a className='mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit'>LER MAIS</a>
-                </div>
-
               </div>
             </div>
           </section>
@@ -315,22 +295,24 @@ export default function Home() {
 
             <div className='grid gap-8 mt-20 md:grid-cols-2'>
 
-              <ul className='flex flex-col gap-8'>
+              <ul className='flex flex-col gap-8 md:pt-5'>
                 <li className='flex flex-col gap-1'>
                   <Icons.mail className='text-primary' />
                   <span className='text-xl font-bold'> E-mail</span>
-                  <a className='text-accent' target="_blank" href="mailto:hcontato@mao2.arq.br">hcontato@mao2.arq.br</a>
+                  <a className='text-accent' target="_blank" href="mailto:hcontato@mao2.arq.br">marcio.monteiro@mao2.arq.br</a>
+                  <a className='text-accent' target="_blank" href="mailto:hcontato@mao2.arq.br">allan.nagliati@mao2.arq.br</a>
                 </li>
 
                 <li className='flex flex-col gap-1'>
                   <Icons.whatsapp className='text-primary size-8' />
                   <span className='text-xl font-bold'>Whatsapp</span>
-                  <a className='text-accent' target="_blank" href="https://wa.link/mc2cqr">‪+55 11 99376‑6981‬</a>
+                  <a className='text-accent' target="_blank" href="https://wa.link/f7r5hg">‪+55 11 2691‑7281‬</a>
                 </li>
 
                 <li className='flex flex-col gap-1'>
                   <Icons.location className='text-primary' />
                   <span className='text-xl font-bold'>Escritório</span>
+                  <span className='text-base'>Rua Gomes de Carvalho, 621 - 12º andar - cjto. 1201</span>
                   <a className='flex items-center gap-2 text-accent' target="_blank" href="https://maps.app.goo.gl/T9q41LCMNnkS8yts5">Como chegar <Icons.arrow className='w-3 h-3 rotate-180' /></a>
                 </li>
               </ul>

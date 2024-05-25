@@ -31,11 +31,23 @@ export function MainNav({ headerHasScrolled }) {
           pathname === "/projects"
             ? "text-accent border-b-accent"
             : headerHasScrolled
+              ? "text-primary hover:text-primary/80"
+              : "text-secondary hover:text-secondary/80"
+        )}
+      >
+        PROJETOS
+      </Link>
+
+      <Link
+        href="/#imprensa"
+        className={cn(
+          "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
+          headerHasScrolled
             ? "text-primary hover:text-primary/80"
             : "text-secondary hover:text-secondary/80"
         )}
       >
-        PROJETOS
+        IMPRENSA
       </Link>
 
       <Link

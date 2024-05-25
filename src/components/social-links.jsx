@@ -6,7 +6,7 @@ const SocialLinks = ({ className, ...props }) => {
   return (
     <ul className={cn("flex flex-col gap-5 ", className)} {...props}>
       <li className="transition-colors text-muted hover:text-accent">
-        <a href="">
+        <a target="_blank" href="https://www.facebook.com/share/4HqMQJGnkxHbwLG1/?mibextid=qi2Omg">
           <Icons.facebook className="size-8" />
           <span className="sr-only">Facebook</span>
         </a>
@@ -20,13 +20,22 @@ const SocialLinks = ({ className, ...props }) => {
       </li>
 
       <li className="transition-colors text-muted hover:text-accent">
-        <a href="">
+        <a target="_blank" href="https://br.pinterest.com/mao2arquitetura/">
+          <Icons.pinterest className="size-8" />
+          <span className="sr-only">Pinterest</span>
+        </a>
+      </li>
+
+      <li className="transition-colors text-muted hover:text-accent">
+        <a target="_blank" href="">
           <Icons.linkedin className="size-8" />
           <span className="sr-only">Linkedin</span>
         </a>
       </li>
+
+
       <li className="transition-colors text-muted hover:text-accent">
-        <a target="_blank" href="https://wa.link/mc2cqr">
+        <a target="_blank" href="https://wa.link/f7r5hg">
           <Icons.whatsapp className="size-8" />
           <span className="sr-only">Whatsapp</span>
         </a>
