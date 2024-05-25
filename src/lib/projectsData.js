@@ -15,7 +15,7 @@ const projectsList = [
             "Este projeto arquitetônico visa harmonizar funcionalidade e estética, garantindo espaços fluidos e inspiradores. Combinando elementos contemporâneos e sustentáveis, nossa equipe busca criar ambientes que transcendam expectativas, oferecendo soluções inovadoras e adaptáveis às necessidades dos clientes. Nosso compromisso é com a excelência, garantindo que cada projeto seja entregue dentro do prazo, do orçamento e com a plena satisfação do cliente. Trabalhando em estreita colaboração com nossos clientes, buscamos proporcionar experiências únicas e duradouras através da arquitetura.",
         emphasisContent: true,
         coverImage: Cover1,
-        gallery: [GalleryExample1, GalleryExample2, GalleryExample3],
+        gallery: [GalleryExample1, GalleryExample2, GalleryExample3, GalleryExample1, GalleryExample2, GalleryExample3, GalleryExample1, GalleryExample2, GalleryExample3, GalleryExample1, GalleryExample2, GalleryExample3],
         category: "business",
         locationType: "INTERIOR",
     },
