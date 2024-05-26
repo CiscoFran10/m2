@@ -42,7 +42,7 @@ const Project = () => {
     <>
       <Dialog open={isOpen} onOpenChange={handleOpenChange} >
         <DialogContent className="bg-transparent max-w-[820px] border-none">
-          <Carousel opts={{ startIndex: currentImageIndex }} className="mx-5 mt-6">
+          <Carousel opts={{ startIndex: currentImageIndex }} className="mx-2 mt-8 sm:mx-6">
             <CarouselContent className="bg-transparent border-none">
               {currentProject.gallery.map((image, index) => (
                 <CarouselItem key={index} className="w-full">
@@ -59,8 +59,8 @@ const Project = () => {
 
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className='-left-12' />
+            <CarouselNext className='-right-12' />
           </Carousel>
         </DialogContent>
       </Dialog>

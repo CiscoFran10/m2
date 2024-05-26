@@ -153,7 +153,7 @@ export default function Home() {
             }} className='relative z-20 mt-16' >
               <CarouselContent className='-ml-0'>
                 <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
-                  <ProjectCard locationType='INTERIOR' title='cotton house' coverImage={'/project-1.avif'} endpoint={'projeto-1'} />
+                  <ProjectCard locationType='EM ANDAMENTO' title='cotton house' coverImage={'/project-1.avif'} endpoint={'projeto-1'} />
                 </CarouselItem>
                 <CarouselItem className='relative pl-0 sm:basis-1/2 lg:basis-1/4'>
                   <ProjectCard locationType='EXTERIOR' title='cotton house' coverImage={'/project-2.avif'} endpoint={'projeto-2'} />
@@ -168,9 +168,10 @@ export default function Home() {
                   <ProjectCard locationType='INTERIOR' title='cotton house' coverImage={'/project-5.avif'} endpoint={'projeto-5'} />
                 </CarouselItem>
               </CarouselContent>
+
               <CarouselIndicator />
-              <CarouselNext />
-              <CarouselPrevious />
+              <CarouselNext size='md'/>
+              <CarouselPrevious size='md' />
 
               <div className='flex justify-center mt-8 sm:mt-0'>
                 <Button asChild size='lg' className='flex-col gap-3 text-sm border-4 rounded-full sm:text-base sm:-translate-y-14 size-28 sm:size-40 border-muted'>
@@ -181,14 +182,11 @@ export default function Home() {
                 </Button>
               </div>
             </Carousel>
-
-
           </section>
 
           <section className='container mt-24'>
             <h2 className='title-center'>NOSSOS VALORES</h2>
             <p className='mt-4 text-3xl font-bold text-center sm:text-5xl'>Valores que nos inspiram</p>
-
 
             <div className='grid gap-20 mt-24 lg:grid-cols-2'>
               <div className='z-20 flex flex-col gap-4 p-6 border bg-secondary'>
