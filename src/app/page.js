@@ -58,14 +58,14 @@ export default function Home() {
 
   return (
     <>
-      <main >
-        <div className='relative'>
+      <main>
+        <div>
           <SocialLinks className={'hidden lg:flex absolute z-20 left-7 top-1/2 -translate-y-1/2'} />
 
           <ul className='grid w-full'>
             {banners.map((item, index) => {
               return <li style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0,0,0,0.5)) , url(${item.image}) no-repeat center center/cover`
+                background: `linear-gradient(to right, rgba(0, 0, 0, 0.5) 10%, rgba(0,0,0,0.1) 30%) , url(${item.image}) no-repeat center center/cover`
               }} className={cn('relative grid justify-center w-full min-h-screen overflow-hidden col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-1000', current === index ? 'opacity-100' : 'opacity-0')} key={index} >
 
                 <motion.div
@@ -82,7 +82,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className='relative'>
+        <div className='relative bg-[linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(/blueprint.jpg)] bg-contain bg-top bg-no-repeat'>
           <div className='absolute inset-0 z-10 flex justify-center pointer-events-none'>
             <div className='max-w-7xl grid w-full h-full grid-cols-2 sm:grid-cols-[repeat(3,1fr)] gap-40 px-10'>
               <div className='border-x border-accent/10' />
@@ -91,13 +91,13 @@ export default function Home() {
             </div>
           </div>
 
-          <section initial={{ y: 100, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: '1000px' }} id='about' className='container flex flex-col gap-5 pt-32 bg-[url(/blueprint.jpg)] bg-cover min-h-screen '>
+          <section initial={{ y: 100, opacity: 0 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ margin: '1000px' }} id='about' className='container flex flex-col min-h-screen gap-5 pt-32 '>
             <h2 className='title'>SERVIÇOS</h2>
 
             <div className='grid gap-10 mt-10 md:grid-cols-[0.8fr_1fr]'>
               <Image className='relative w-full' src='/about.png' alt='' width={500} height={650} />
 
-              <Accordion defaultValue='item-1' type="multiple" collapsible={'true'}>
+              <Accordion defaultValue={['item-1']} type="multiple" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger>PROJETOS DE ARQUITETURA</AccordionTrigger>
                   <AccordionContent>
