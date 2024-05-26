@@ -91,7 +91,7 @@ const Project = () => {
             <p className="text-primary mt-3">{currentProject.description}</p>
           </div>
 
-          <ul className={`hidden md:flex scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent w-full md:w-5/6 lg:w-1/2 flex-col gap-12 sm:gap-10 md:gap-16 md:max-h-[820px] ${currentProject.gallery.length > 3 && "md:overflow-y-scroll pr-1"}`}>
+          <ul className={`hidden md:flex scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent w-full md:w-5/6 lg:w-1/2 flex-col gap-12 sm:gap-10 md:gap-16  ${currentProject.gallery.length > 3 && "md:max-h-[820px] md:overflow-y-scroll pr-1"}`}>
             {currentProject.gallery.map((image, index) => (
               <li className="list-none cursor-zoom-in w-full md:w-full" key={index} onClick={() => handleOpenImage(index)}>
                 <Image
@@ -104,7 +104,7 @@ const Project = () => {
               </li>
             ))}
           </ul>
-          <ul className={`relative flex md:hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent w-full md:w-5/6 lg:w-1/2 flex-col gap-12 sm:gap-10 md:gap-16 ${currentProject.gallery.length > 3 && "md:overflow-y-scroll pr-1"}`}>
+          <ul className={`relative flex md:hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent w-full md:w-5/6 lg:w-1/2 flex-col gap-12 sm:gap-10 md:gap-16 ${currentProject.gallery.length > 3 && "md:max-h-[820px] md:overflow-y-scroll pr-1"}`}>
             {imagesToDisplay.map((image, index) => (
               <li className="list-none cursor-zoom-in w-full md:w-full" key={index} onClick={() => handleOpenImage(index)}>
                 <Image
@@ -117,11 +117,11 @@ const Project = () => {
               </li>
             ))}
             <div className='absolute -bottom-24 left-1/2 transform -translate-x-1/2 flex md:hidden justify-center mt-8 sm:mt-0'>
-            <Button size='lg' onClick={handleToggleShowAll} className='flex-col gap-3 text-sm border-4 rounded-full sm:text-base size-28 sm:size-40 border-muted'>
-              {hideShowAll ? <ArrowUpIcon className='animate-bounce size-6 sm:size-8' /> : <ArrowDownIcon className='animate-bounce size-6 sm:size-8' />}
-              {hideShowAll ? "Ver menos" : "Ver mais"}
-            </Button>
-          </div>
+              <Button size='lg' onClick={handleToggleShowAll} className='flex-col gap-3 text-sm border-4 rounded-full sm:text-base size-28 sm:size-40 border-muted'>
+                {hideShowAll ? <ArrowUpIcon className='animate-bounce size-6 sm:size-8' /> : <ArrowDownIcon className='animate-bounce size-6 sm:size-8' />}
+                {hideShowAll ? "Ver menos" : "Ver mais"}
+              </Button>
+            </div>
           </ul>
 
         </section>
