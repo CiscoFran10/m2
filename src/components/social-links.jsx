@@ -27,7 +27,7 @@ const SocialLinks = ({ className, ...props }) => {
       </li>
 
       <li className="transition-colors text-muted hover:text-accent">
-        <a target="_blank" href="">
+        <a target="_blank" href="https://www.linkedin.com/company/m2q-arquitetura/">
           <Icons.linkedin className="size-8" />
           <span className="sr-only">Linkedin</span>
         </a>

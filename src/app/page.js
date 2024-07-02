@@ -188,13 +188,22 @@ export default function Home() {
             <h2 className='title-center'>NOSSOS VALORES</h2>
             <p className='mt-4 text-3xl font-bold text-center sm:text-5xl'>Valores que nos inspiram</p>
 
-            <div className='grid gap-20 mt-24 lg:grid-cols-2'>
+
+            <div className='grid gap-20 mt-24 lg:grid-cols-3'>
               <div className='z-20 flex flex-col gap-4 p-6 border bg-secondary'>
                 <div className='p-4 border rounded-full -mt-14 bg-secondary size-16'>
                   <Image src='/quotes.png' alt='' width={32} height={32} />
                 </div>
                 <h3 className='text-2xl font-heading text-accent'>Excelência</h3>
                 <p>Desde a concepção até a conclusão, cada detalhe é cuidadosamente considerado para garantir que nossos projetos alcancem os mais altos padrões de qualidade. Nosso compromisso com a excelência é evidente em cada linha desenhada e em cada espaço criado.</p>
+              </div>
+
+              <div className='z-20 flex flex-col gap-4 p-6 border bg-secondary'>
+                <div className='p-4 border rounded-full -mt-14 bg-secondary size-16'>
+                  <Image src='/quotes.png' alt='' width={32} height={32} />
+                </div>
+                <h3 className='text-2xl font-heading text-accent'>Inovação</h3>
+                <p>Em cada projeto, buscamos desafiar os limites convencionais, explorando novas ideias e soluções. Somos impulsionados pela inovação, incorporando tecnologia de ponta e técnicas contemporâneas para criar espaços que inspiram e encantam.</p>
               </div>
 
               <div className='z-20 flex flex-col gap-4 p-6 border bg-secondary'>
