@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Oswald, Plus_Jakarta_Sans } from "next/font/google";
 import MainLayout from "@/components/main-layout";
+import Head from "next/head";
 
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-heading" });
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-text" });
@@ -13,7 +14,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
+      <Head>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <body
         className={cn(
           "min-h-screen font-text antialiased",
