@@ -63,7 +63,7 @@ export function MobileNav({ headerHasScrolled }) {
           </Link>
 
           <Link
-            href="/projects"
+            href="/projetos"
             className={cn(
               "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
               !hash && pathname === "/projects"

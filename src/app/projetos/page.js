@@ -12,7 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion'
   description: "Portfólio de Projetos",
 }; */
 
-const Projects = () => {
+const Projetos = () => {
   const [projectsFilter, setProjectsFilter] = React.useState('all');
 
   return (
@@ -42,6 +42,13 @@ const Projects = () => {
             <Button onClick={() => setProjectsFilter('residential')} variant={projectsFilter === "residential" ? "filterActive" : "filter"} size="auto">
               RESIDENCIAIS
             </Button>
+
+            <span className="block font-normal font-heading text-primary/80">
+              /
+            </span>
+            <Button onClick={() => setProjectsFilter('onGoing')} variant={projectsFilter === "onGoing" ? "filterActive" : "filter"} size="auto">
+              EM ANDAMENTO
+            </Button>
           </div>
 
           <ul className="mt-10 sm:mt-16 mb-[82px] sm:mb-[168px] md:mb-[248px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-9 sm:gap-y-12 sm:gap-x-8">
@@ -61,4 +68,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projetos;

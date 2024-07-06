@@ -41,7 +41,7 @@ const Project = () => {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={handleOpenChange} >
-        <DialogContent className="bg-transparent max-w-[820px] border-none">
+      <DialogContent className="bg-transparent sm:max-w-[1200px] w-[85vw] h-[85vh]: border-none">
           <Carousel opts={{ startIndex: currentImageIndex }} className="mx-2 mt-8 sm:mx-6">
             <CarouselContent className="bg-transparent border-none">
               {currentProject.gallery.map((image, index) => (
@@ -51,7 +51,7 @@ const Project = () => {
                     alt={currentProject.title}
                     width={633}
                     height={554}
-                    className="w-full h-full"
+                    className="w-full h-full max-h-[85vh] object-contain"
                   />
 
                 </CarouselItem>
@@ -75,7 +75,7 @@ const Project = () => {
             size="auto"
             className="flex mr-auto mt-20 md:mt-32 mb-12 md:mb-14 transition ease-in-out delay-150 duration-300 scale-[1.7] md:scale-[2.5] md:hover:scale-[3]"
           >
-            <Link href={`/projects`}>
+            <Link href={`/projetos`}>
               <Icons.arrow className="text-primary hover:text-accent" />
             </Link>
           </Button>

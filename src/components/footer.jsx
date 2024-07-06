@@ -37,7 +37,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="/projects"
+              href="/projetos"
               className={
                 "font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent"
               }

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Cover1 = "/project-1.avif";
 const Cover2 = "/project-2.avif";
 const Cover3 = "/project-3.avif";
@@ -891,10 +893,710 @@ const lcsImages = [
 
 const csImages = [Cs1, Cs2, Cs3, Cs4, Cs5, Cs6, Cs7, Cs8, Cs9];
 
+const defaultOnGoingDescription = (
+    <>
+        O projeto de arquitetura em andamento é mais do que uma simples construção,
+        é a materialização de ideias entre o sonho e a realidade.
+        <br />
+        <br />
+        Cada linha desenhada no papel é um convite para o futuro, uma promessa de
+        transformação.
+    </>
+);
+
 const projectsList = [
     {
-        title: "Projeto 1",
-        endpoint: "projeto-1",
+        title: "GRAND COFFEE",
+        endpoint: "comercial-grand-coffee",
+        description: (
+            <>
+                Bom, o Grand Coffee é uma rede de cafés corporativa, especializada em
+                prédios corporativos e que atende o público que trabalha e precisa ter
+                um espaço, um local e uma opção de refeição rápida. Então, ele serve
+                desde lanches, café da manhã e salgados até almoço na hora de pico,
+                especialmente nos dias de chuva ou nos dias onde as pessoas precisam se
+                reunir, fazer coffee breaks e tudo mais. Nesse sentido, a Grand Coffee,
+                que é uma rede local que existe aqui em São Paulo com cerca de 10
+                unidades, nos convidou para fazer o projeto, sendo uma das unidades em
+                uma laje corporativa de uma grande farmacêutica para atender cerca de
+                mil funcionários.
+                <br />
+                <br />
+                Assim, nós nos debruçamos sobre o projeto que deveria respeitar o
+                projeto completo da farmacêutica, o projeto do andar, que compreendia
+                outros equipamentos para os funcionários, como a área de jogos, a área
+                de lazer, a área de descanso, a área de sociabilização e com o
+                complemento do café, que seria um espaço onde iria reunir todas essas
+                atividades e também os horários de maior relaxamento e confraternização
+                dos funcionários, que é a hora das refeições.
+                <br />
+                <br />
+                Assim como num projeto de shopping ou num projeto interno, a gente
+                utilizou o espaço existente tanto para a parte de cozinha e parte
+                técnica e industrial, como para a parte de atendimento, utilizando já a
+                linguagem existente do café, da rede de cafés Grand Coffee, e que foi
+                adaptada por nós para poder ser ambientada nesse local. O projeto foi
+                muito rápido, muito celery, de forma que pudesse atender o cronograma
+                geral, tanto de inauguração da farmacetutica e de seus funcionários,
+                como da operação do café, que deveria ser após o projeto e reforma e
+                ainda ser equipado, ser testado e ser ambientado para receber os
+                clientes.
+            </>
+        ),
+        showInHome: false,
+        coverImage: cgcsImages[2],
+        gallery: cgcsImages,
+        category: "business",
+    },
+    {
+        title: "STUDIO TATTOO RK",
+        endpoint: "comercial-studio-tattoo-rk",
+        description: (
+            <>
+                Quanto ao estúdio de tatuagem, fomos convidados pelo proprietário do
+                empreendimento, que tinha um plano e um sonho: transformar sua
+                profissão, sua paixão e seu hobby em um negócio maior e mais lucrativo.
+                <br />
+                <br />
+                Assim, reformamos um imóvel antigo na região da Pompeia, aqui em São
+                Paulo. Demolimos quase completamente o espaço e redesenhamos o layout
+                para atender não apenas esse tatuador, mas também outros profissionais
+                da área.
+                <br />
+                <br />
+                No segundo andar, criamos um espaço compartilhado para tatuagem, o que
+                tornou o ambiente bastante interessante e diferenciado na cidade. Aqui,
+                as pessoas podem interagir com clientes e tatuadores, trocar ideias,
+                desenhos e mensagens. O espaço tem sido um grande sucesso e funcionado
+                de forma lúdica, criativa, profissional e técnica ao longo dos anos.
+                <br />
+                <br />
+                Foi um projeto novo para nosso escritório, um desafio considerável,
+                sendo um tipo de projeto comercial bastante diferente, mas que resultou
+                em algo muito positivo, utilizando recursos significativos em termos de
+                custo, investimento e tempo para atender os clientes com a maior
+                eficiência e qualidade possível.
+            </>
+        ),
+        showInHome: false,
+        coverImage: strkImages[0],
+        gallery: strkImages,
+        category: "business",
+    },
+    {
+        title: "CLÍNICA FRED LARA",
+        endpoint: "comercial-clinica-fred-lara",
+        description: (
+            <>
+                Nosso escritório foi responsável pelo projeto conceitual e executivo,
+                bem como pela gestão integral da obra, desde a demolição completa até a
+                reconstrução. Acompanhamos de perto cada etapa, contando com uma equipe
+                dedicada que supervisionou tanto os serviços internos, como a remoção de
+                forros, instalações e marcenaria, quanto os serviços terceirizados,
+                incluindo elétrica, hidráulica, gesso, pintura, ar condicionado e
+                revestimentos, entre outros.
+                <br />
+                <br />
+                Durante o processo, realizamos uma significativa reestruturação do
+                layout, com destaque para a expansão da recepção e do consultório, a
+                reforma dos banheiros e a criação de um lounge de descanso e massagem,
+                proporcionando aos pacientes um ambiente acolhedor e tranquilo enquanto
+                aguardam os procedimentos. Além disso, aprimoramos a sala de anestesia
+                com novo mobiliário e design, aumentamos a capacidade de armazenamento
+                com a instalação de mais armários e readequamos a copa, tornando-a mais
+                funcional e agradável para os clientes.
+                <br />
+                <br />
+                Todas as áreas receberam melhorias, incluindo a substituição do piso,
+                forro, ar condicionado e toda a marcenaria, mantendo apenas a estrutura
+                original. Até mesmo as janelas, anteriormente pretas, foram modificadas
+                para combinar com a nova estética das paredes. O resultado final é um
+                espaço completamente renovado e adaptado às necessidades dos nossos
+                clientes e pacientes.
+            </>
+        ),
+        showInHome: true,
+        coverImage: flcImages[7],
+        gallery: flcImages,
+        category: "business",
+    },
+    {
+        title: "VR",
+        endpoint: "em-andamento-vr",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: vrgImages[4],
+        gallery: vrgImages,
+        category: "onGoing",
+    },
+    {
+        title: "ER",
+        endpoint: "em-andamento-er",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: erImages[5],
+        gallery: erImages,
+        category: "onGoing",
+    },
+    {
+        title: "LN",
+        endpoint: "em-andamento-ln",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: lnImages[11],
+        gallery: lnImages,
+        category: "onGoing",
+    },
+    {
+        title: "LR",
+        endpoint: "em-andamento-lr",
+        description: defaultOnGoingDescription,
+        showInHome: true,
+        coverImage: lrImages[22],
+        gallery: lrImages,
+        category: "onGoing",
+    },
+    {
+        title: "VV",
+        endpoint: "em-andamento-vv",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: vvImages[3],
+        gallery: vvImages,
+        category: "onGoing",
+    },
+    {
+        title: "CH",
+        endpoint: "em-andamento-ch",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: chImages[7],
+        gallery: chImages,
+        category: "onGoing",
+    },
+    {
+        title: "EM",
+        endpoint: "em-andamento-em",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: emImages[5],
+        gallery: emImages,
+        category: "onGoing",
+    },
+    {
+        title: "MM",
+        endpoint: "em-andamento-mm",
+        description: defaultOnGoingDescription,
+        showInHome: true,
+        coverImage: mmImages[9],
+        gallery: mmImages,
+        category: "onGoing",
+    },
+    {
+        title: "MD",
+        endpoint: "em-andamento-md",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: mdbvImages[5],
+        gallery: mdbvImages,
+        category: "onGoing",
+    },
+
+    {
+        title: "IN",
+        endpoint: "em-andamento-in",
+        description: defaultOnGoingDescription,
+        showInHome: false,
+        coverImage: inImages[6],
+        gallery: inImages,
+        category: "onGoing",
+    },
+    {
+        title: "SA",
+        endpoint: "residencial-sa",
+        description: (
+            <>
+                Em um cenário onde o lar se torna o epicentro da vida moderna, o projeto
+                residencial que idealizamos não é apenas um espaço físico, mas sim uma
+                extensão do estilo de vida de seus habitantes.
+                <br />
+                <br />
+                Internamente, cada ambiente é pensado para promover o bem-estar e a
+                praticidade. Dos espaços sociais fluídos, ideais para receber amigos e
+                familiares, aos quartos privativos que oferecem conforto e
+                tranquilidade, cada detalhe é cuidadosamente planejado para proporcionar
+                uma experiência residencial excepcional.
+                <br />
+                <br />
+                Em suma, nosso projeto de arquitetura residencial não se limita a erguer
+                paredes e tetos, mas sim a criar um espaço que inspire e enriqueça a
+                vida daqueles que nele habitam.
+            </>
+        ),
+        showInHome: false,
+        coverImage: saImages[5],
+        gallery: saImages,
+        category: "residential",
+    },
+    {
+        title: "CV",
+        endpoint: "residencial-cv",
+        description: (
+            <>
+                O desejo do morador sempre foi viver em uma casa de vila e com isso
+                iniciou-se uma busca por uma propriedade nesse estilo para tornar esse
+                sonho realidade.
+                <br />
+                <br />
+                Inicialmente planejamos apenas uma reforma, porém, logo percebemos que
+                demolir a construção existente permitiria um aproveitamento máximo de
+                luz natural e maior flexibilidade no projeto. No novo design, foi criado
+                um espaçoso piso térreo com lavabo, sala de estar e de mídia, cozinha
+                integrada, despensa e uma suíte para os pais do morador, cercados por um
+                belo jardim.
+                <br />
+                <br />
+                Optamos por materiais rústicos, como granito cinza, para harmonizar com
+                as vigas metálicas expostas, criando um ambiente acolhedor. Uma estante
+                sem fundo foi projetada para permitir que o morador e seus convidados
+                apreciassem a arquitetura da casa.
+                <br />
+                <br />
+                No primeiro andar, encontram-se a suíte máster, o closet, uma suíte de
+                hóspedes e acesso ao rooftop, além da área de serviço com depósito.
+                Todos os banheiros foram equipados com claraboias para ventilação e
+                iluminação naturais. A suíte máster, estrategicamente posicionada para
+                maximizar a ventilação natural, possui janelas no estilo
+                &quot;fita&quot; para manter a estética da fachada.
+                <br />
+                <br />
+                Placas de vidro autoportantes foram utilizadas na circulação,
+                proporcionando um ambiente sofisticado e transparente, sem a necessidade
+                de caixilhos convencionais. O rooftop, com 75 m², foi equipado com uma
+                hidromassagem, churrasqueira e amplo espaço para eventos sociais.
+                <br />
+                <br />
+                Destacamos o layout integrado como ponto forte do projeto, criando uma
+                atmosfera acolhedora.
+            </>
+        ),
+        showInHome: true,
+        coverImage: cdvnsImages[28],
+        gallery: cdvnsImages,
+        category: "residential",
+    },
+    {
+        title: "SB",
+        endpoint: "residencial-sb",
+        description: (
+            <>
+                Uma família composta por pai, mãe e filha única comprou um apartamento
+                pouco antes da pandemia. Apesar de recentemente reformado, o imóvel não
+                atendia ao estilo e layout desejados pelos novos moradores. Eles
+                planejavam reformar o apartamento para adequar os dormitórios para a
+                filha, que tinha dois anos na época, e transformar a sala de TV em uma
+                cozinha gourmet integrada ao living.
+                <br />
+                <br />
+                O casal tinha alguns pedidos especiais para o apartamento, incluindo uma
+                adega e uma cozinha gourmet para receber convidados e familiares.
+                <br />
+                <br />
+                Eles encomendaram uma adega personalizada com cristaleira e refrigeração
+                específica, com detalhes como revestimento de tijolinhos na cor Shiraz.
+                <br />
+                <br />
+                A antiga sala de TV foi transformada em uma cozinha gourmet, com a
+                infraestrutura hidráulica e elétrica adaptada, e a varanda e living
+                foram otimizados com marcenaria especial para ampliar o espaço de
+                convivência.
+                <br />
+                <br />
+                Mudanças na entrada e acesso à área íntima, além da criação de um lavabo
+                único, também foram realizadas. Na área íntima, uma segunda suíte foi
+                adaptada para a filha, com tema infantil.
+                <br />
+                <br />
+                As circulações foram redesenhadas para isolar o acesso dos dormitórios e
+                da área de serviços, com a criação de um painel de marcenaria na sala
+                para separar visualmente os espaços e esconder o lavabo e a nova TV. O
+                desnível no piso do living foi aproveitado para dividir a área em um
+                espaço para refeições em uma cota mais alta e área de estar em uma cota
+                mais baixa. Também foi incluída uma área de charutos na varanda, a
+                pedido do cliente, para desfrutar de vinhos após o jantar com os amigos.
+            </>
+        ),
+        showInHome: true,
+        coverImage: sbImages[15],
+        gallery: sbImages,
+        category: "residential",
+    },
+    {
+        title: "AP",
+        endpoint: "residencial-ap",
+        description: (
+            <>
+                O casal gaúcho, que se estabeleceu em São Paulo, tinha o desejo de ter
+                um lar acolhedor para receber a família em visitas.
+                <br />
+                <br />
+                Para alcançar o estilo contemporâneo, sofisticado e levemente
+                minimalista deste apartamento, optamos por soluções inteligentes em
+                marcenaria e um layout integrado e fluido.
+                <br />
+                <br />
+                A área social integrada foi concebida como uma praça, permitindo ser
+                totalmente aberta ou reservada através de portas sanfonadas. Criamos um
+                banco amplo em mármore, versátil e situado ao lado da janela. Também
+                projetamos móveis sob medida, incluindo adegas e churrasqueira.
+                <br />
+                <br />
+                Um destaque adicional do projeto é a copa, que se estende da cozinha e
+                foi revestida inteiramente com tijolos aparentes, proporcionando um
+                efeito visual interessante.
+                <br />
+                <br />
+                Nos quartos, mantivemos uma paleta de cores sóbrias e claras, criando
+                uma atmosfera tranquila. Na suíte principal, expandimos a área total
+                fechando a sacada com vidro e adornando-a com vasos de plantas e uma
+                poltrona de leitura confortável, proporcionando um recanto ideal para
+                relaxamento.
+            </>
+        ),
+        showInHome: false,
+        coverImage: apImages[17],
+        gallery: apImages,
+        category: "residential",
+    },
+    {
+        title: "MD",
+        endpoint: "residencial-md",
+        description: (
+            <>
+                O apartamento já estava ocupado pela família, composta pelos pais e três
+                irmãos, quando, durante a pandemia, eles perceberam que o quarto dos
+                meninos não atendia mais às suas necessidades de estudo e não era mais
+                adequado para suas idades. Sentiram que era hora de renovar e adaptar os
+                espaços de acordo com as novas demandas.
+                <br />
+                <br />
+                Os dois irmãos são aficionados por cultura geek e colecionam diversos
+                itens relacionados, como bonecos Funko e naves de Star Wars. Eles
+                queriam manter e organizar esses elementos, além de ampliar a área de
+                estudo e trocar as camas de solteiro por camas de casal. A irmã, com
+                necessidades semelhantes, desejava um quarto onde pudesse receber
+                amigas, estudar, maquiar-se, entre outras atividades.
+                <br />
+                <br />
+                Participamos de todo o processo, adotando uma abordagem de &quot;Design
+                and Build&quot;, onde concebemos e executamos o projeto com equipes sob
+                nossa gestão. O escritório também se encarregou da produção e
+                iluminação, assim como do design dos novos móveis sob medida (os
+                armários originais foram mantidos). Houve alterações de layout em todos
+                os ambientes, com reposicionamento dos móveis; as portas e passagens
+                foram mantidas, assim como o piso e o forro.
+            </>
+        ),
+        showInHome: false,
+        coverImage: mdImages[11],
+        gallery: mdImages,
+        category: "residential",
+    },
+    {
+        title: "RM",
+        endpoint: "residencial-rm",
+        description: (
+            <>
+                Uma família composta por um casal, filhos e pais, mudou-se de uma casa
+                para um apartamento durante a pandemia, buscando aproveitar as áreas
+                comuns e a segurança do condomínio.
+                <br />
+                <br />
+                Com todos confinados em casa, foi necessário criar espaços separados
+                para trabalho e estudo.
+                <br />
+                <br />
+                Um dos dormitórios foi transformado em escritório, e a varanda,
+                originalmente fechada, foi integrada à sala com a troca da caixilharia,
+                gerando a identidade do projeto. Um pórtico de madeira divide a sala da
+                varanda e foi replicado na divisória da cozinha, complementado pela
+                marcenaria para otimizar o espaço com um orçamento enxuto.
+                <br />
+                <br />
+                O apartamento, novo e entregue pela construtora, necessitava de
+                finalização de obra e interiores.
+                <br />
+                <br />
+                Desenvolvemos o projeto desde o conceito até a execução, adotando uma
+                linguagem minimalista para criar uma nova experiência para os moradores.
+                Apesar de não haver alterações significativas de layout devido à planta
+                enxuta, demolimos a caixilharia para a varanda e fechamos o acesso para
+                a lavanderia, ganhando espaço para armários em ambos os lados.
+            </>
+        ),
+        showInHome: false,
+        coverImage: rmImages[9],
+        gallery: rmImages,
+        category: "residential",
+    },
+    {
+        title: "TF",
+        endpoint: "residencial-tf",
+        description: (
+            <>
+                Uma família composta por um casal e um filho pequeno adquiriu um imóvel
+                parcialmente reformado de um antigo cliente nosso.
+                <br />
+                <br />
+                A reforma, iniciada antes da pandemia, foi deixada incompleta.
+                <br />
+                <br />
+                Ao trabalhar para esses novos clientes, mantivemos quase tudo no mesmo
+                lugar, incluindo os revestimentos de piso, paredes e o layout existente.
+                Nosso foco foi complementar os serviços iniciados e adicionar alguns
+                elementos especiais que refletissem as paixões dos moradores, como uma
+                churrasqueira e um piano.
+                <br />
+                <br />
+                Para o piano, projetamos uma estante multifuncional que também acomodava
+                a TV e o ar condicionado, criando um grande painel para a sala. Quanto à
+                churrasqueira, integramos uma ampla mesa flutuante à ilha de granito que
+                desenhamos, proporcionando um espaço único para recepções e refeições em
+                família.
+                <br />
+                <br />
+                No living, reorganizamos o espaço, abrindo-o e realocando o acesso ao
+                lavabo, lavanderia e cozinha, estendendo bancadas, conectando o jantar à
+                área gourmet e criando um sofá duplo para ampliar a comunicação entre os
+                ambientes.
+            </>
+        ),
+        showInHome: false,
+        coverImage: tfImages[8],
+        gallery: tfImages,
+        category: "residential",
+    },
+    {
+        title: "LG",
+        endpoint: "residencial-lg",
+        description: (
+            <>
+                Um casal, ela psicóloga e ele empresário financeiro, com um filho
+                recém-nascido, decidiu mudar de Brasília para São Paulo para ficar mais
+                próximo de familiares e amigos.
+                <br />
+                <br />
+                Adquiriram um apartamento em bom estado, mas precisavam de alguns
+                reparos e modificações no layout. Foram indicados por amigos que
+                compartilhavam o amor por vinhos e se encantaram com a adega projetada
+                por nós.
+                <br />
+                <br />
+                O apartamento, embora antigo e em boas condições, passou por reformas
+                focadas principalmente na área social, banheiros e suítes. As áreas de
+                serviço e cozinha foram mantidas quase intactas.
+                <br />
+                <br />
+                O projeto incluiu desde a concepção até a montagem, com destaque para o
+                design personalizado da adega que foi um pedido importante do cliente e
+                a iluminação que realçou sua beleza.
+                <br />
+                <br />
+                O escritório foi responsável por todas as etapas, incluindo
+                gerenciamento da construção e escolha de mobiliário.
+                <br />
+                <br />
+                No projeto reconfiguramos a entrada do apartamento, reposicionando a
+                porta principal para destacar a adega como ponto focal e melhorar a
+                circulação e livrar a parede principal. Também modificamos a entrada do
+                lavabo, criando uma extensa parede branca que conecta os espaços e
+                permite a instalação de ar condicionado embutido.
+                <br />
+                <br />
+                Integrando a varanda ao resto do apartamento, criamos uma sensação de
+                expansão. Na cozinha, consolidamos as entradas para evitar circulação
+                desnecessária e concentramos as conexões próximas à entrada principal.
+                No hall, introduzimos uma distribuição em madeira para as circulações.
+                Na suíte do casal, ampliamos o closet sobre a área de banho e o
+                camuflamos atrás de um painel ripado da marcenaria.
+            </>
+        ),
+        showInHome: false,
+        coverImage: lgImages[24],
+        gallery: lgImages,
+        category: "residential",
+    },
+    {
+        title: "NM",
+        endpoint: "residencial-nm",
+        description: (
+            <>
+                Uma família composta por mãe, pai e filho único ocupava um apartamento
+                onde o quarto do filho, projetado na infância, já não correspondia aos
+                seus interesses.
+                <br />
+                <br />
+                Os pais desejavam manter a base existente, incorporando novas peças de
+                design para criar um ambiente estimulante e relaxante para estudo e
+                lazer. O filho queria um sistema de LED RGB para criar uma atmosfera
+                &quot;gamer&quot; durante os jogos online. por nós.
+                <br />
+                <br />
+                Apesar de termos mantido a estrutura básica do layout, optamos por
+                realizar ajustes pontuais visando maximizar o aproveitamento dos móveis
+                existentes e minimizar o impacto da obra. Mantivemos a disposição geral
+                dos móveis, como a cama e os armários, porém introduzimos algumas
+                mudanças, como a inclusão de uma nova poltrona e uma bancada maior,
+                proporcionando maior funcionalidade ao espaço.
+                <br />
+                <br />
+                Um dos nossos principais objetivos foi preservar e reutilizar ao máximo
+                os elementos existentes. Por exemplo, a marcenaria da cabeceira foi
+                reaproveitada, passando por uma simples mudança de cor e mantendo o
+                design original do painel. Essa abordagem não apenas reduziu o custo e o
+                tempo da obra, mas também trouxe uma sensação de familiaridade e
+                conforto aos clientes, ao manter elementos familiares em um ambiente
+                renovado.
+            </>
+        ),
+        showInHome: false,
+        coverImage: nmImages[0],
+        gallery: nmImages,
+        category: "residential",
+    },
+    {
+        title: "PF",
+        endpoint: "residencial-pf",
+        description: (
+            <>
+                O apartamento já era habitado pela família, composta pela mãe, pai e
+                três irmãos, sendo o mais velho, um adolescente de 15 anos, proprietário
+                da suíte que passou pela primeira reforma. Seu quarto, concebido quando
+                criança, já não refletia mais sua fase atual e havia perdido o
+                significado para ele.
+                <br />
+                <br />
+                Para ampliar a área social do apartamento, as duas varandas laterais,
+                anteriormente utilizadas apenas como jardins e subutilizadas, foram
+                redesenhadas para serem usadas por toda a família e seus convidados. A
+                varanda esquerda, adjacente à varanda central, foi dedicada à mãe, que
+                pratica yoga e meditação diariamente, transformando o espaço em uma área
+                de relaxamento, leitura, estudo e criatividade. A varanda oposta, ligada
+                à sala de jantar, que antes abrigava a mesa utilizada como escritório
+                pelo pai, foi transformada em um home office e ateliê, além de servir
+                ocasionalmente como área de recepção de convidados ou para refeições
+                rápidas. por nós.
+                <br />
+                <br />
+                Além dos desejos de renovar e redefinir os espaços de acordo com a idade
+                e as necessidades atuais de cada membro da família, eles também buscavam
+                manter a base existente, como os armários e parte da marcenaria,
+                enquanto incorporavam novas peças de design para criar ambientes
+                estimulantes e relaxantes, promovendo um melhor aproveitamento dos
+                momentos em casa, que se tornaram mais frequentes.
+                <br />
+                <br />A reforma concentrou-se principalmente nos ambientes de baixo
+                impacto, envolvendo restauração e substituição de marcenaria e
+                acabamentos. Destaque especial foi dado à suíte do filho, que recebeu
+                uma ampla bancada de estudos.
+            </>
+        ),
+        showInHome: false,
+        coverImage: pfImages[11],
+        gallery: pfImages,
+        category: "residential",
+    },
+
+    {
+        title: "LC",
+        endpoint: "residencial-lc",
+        description: (
+            <>
+                O apartamento já era ocupado pela família, composta pela mãe, pai e os
+                dois irmãos, sendo a maprojectsList da mais velha, antes decorado com tema de
+                princesa, estava se tornando inadequado, com pouco espaço de estudo para
+                suas necessidades atuais. Seu irmão mais novo também precisava de um
+                espaço mais adequado à sua idade.
+                <br />
+                <br />
+                Na área social, a antiga sala de TV e brinquedoteca, anteriormente
+                denominada &quot;Family Room&quot;, estava sendo menos utilizada com o
+                tempo. Por necessidade da mãe, que intensificou seu treino diário devido
+                à pandemia, decidiram transformar parte desse espaço em uma mini
+                academia. Um banheiro existente foi removido e a área foi integrada à
+                sala de TV, conectando-se à academia por meio de um painel de correr que
+                divide e interliga os espaços conforme necessário.
+                <br />
+                <br />
+                Houve uma reforma nos ambientes de nível inferior, envolvendo
+                restauração e substituição de marcenarias e acabamentos.
+                <br />
+                <br />
+                Além das áreas destacadas, foram feitas manutenções e alterações em
+                outros ambientes, como o banheiro master, cozinha e varandas, que serão
+                concluídos em etapas futuras.
+            </>
+        ),
+        showInHome: false,
+        coverImage: lcsImages[26],
+        gallery: lcsImages,
+        category: "residential",
+    },
+    {
+        title: "CS",
+        endpoint: "residencial-cs",
+        description: (
+            <>
+                O prédio que essa família mora, assim como tantos outros que foram
+                desenhados nos Jardins nas décadas de 60, 70 e 80, possuíam
+                características típicas desta época, como planta maior, térreos amplos e
+                abertos, a cozinha separada e também não contemplava um desejo que é
+                bastante atual, a varanda como extensão do aberta do apartamento, uma
+                tipologia de quintal suspenso.
+                <br />
+                <br />
+                Assim décadas mais tardes, quando os moradores se reúnem e fazem um
+                estudo de ampliação da área comum para a varanda por meio de um projeto
+                estrutural complexo e uma obra bastante engenhosa.
+                <br />
+                <br />
+                É neste momento que começa o nosso trabalho. Como vamos ocupar essa área
+                estendida que ao mesmo tempo está integrada e separada do restante do
+                apartamento? Seja no espaço, seja no tempo.
+                <br />
+                <br />
+                Nosso desafio foi condensar todos essas variantes e possibilidades que o
+                novo espaço permitia para criar um projeto de estar, convivência, estudo
+                e descanso, onde tanto os pais, como as filhas e seus convidados,
+                pudessem se isolar do restante da casa e aproveitar as tardes
+                ensolaradas neste quintal elevado.
+                <br />
+                <br />
+                Trouxemos a linguagem da estrutura metálica existente da arquitetura
+                para o desenho do mobiliário, como por exemplo, os bancos que foram
+                confeccionados, dobrados e pintados em finíssima chapas metálicas; ou
+                mesmo a mesa e balcão, que é totalmente suspensa e que tem a sua
+                estrutura oculta e remete inconscientemente a próprio volume suspenso
+                que a abriga, a própria varanda.
+                <br />
+                <br />
+                Utilizamos uma base neutra para as cores, porém com o emprego da cor nos
+                elementos decorativos, iluminarias (como pendente assinado por Lina Bo
+                Bardi), cadeiras, bancos, todos mesclando designs clássicos e
+                contemporâneos da arquitetura brasileira.
+            </>
+        ),
+        showInHome: false,
+        coverImage: csImages[6],
+        gallery: csImages,
+        category: "residential",
+    },
+];
+
+const projectsListOld = [
+    {
+        title: "Cafeteria Grand Coffee - Sanofi",
+        endpoint: "comercial-cafeteria-grand-coffee-sanofi",
         description:
             "Este projeto arquitetônico visa harmonizar funcionalidade e estética, garantindo espaços fluidos e inspiradores. Combinando elementos contemporâneos e sustentáveis, nossa equipe busca criar ambientes que transcendam expectativas, oferecendo soluções inovadoras e adaptáveis às necessidades dos clientes. Nosso compromisso é com a excelência, garantindo que cada projeto seja entregue dentro do prazo, do orçamento e com a plena satisfação do cliente. Trabalhando em estreita colaboração com nossos clientes, buscamos proporcionar experiências únicas e duradouras através da arquitetura.",
         emphasisContent: true,
@@ -918,9 +1620,36 @@ const projectsList = [
     },
     {
         title: "Projeto 2",
-        endpoint: "projeto-2",
-        description:
-            "Este projeto arquitetônico visa harmonizar funcionalidade e estética, garantindo espaços fluidos e inspiradores. Combinando elementos contemporâneos e sustentáveis, nossa equipe busca criar ambientes que transcendam expectativas, oferecendo soluções inovadoras e adaptáveis às necessidades dos clientes. Nosso compromisso é com a excelência, garantindo que cada projeto seja entregue dentro do prazo, do orçamento e com a plena satisfação do cliente. Trabalhando em estreita colaboração com nossos clientes, buscamos proporcionar experiências únicas e duradouras através da arquitetura.",
+        endpoint: "comercial-projeto-2",
+        description: (
+            <>
+                Nosso escritório foi responsável pelo projeto conceitual e executivo,
+                bem como pela gestão integral da obra, desde a demolição completa até a
+                reconstrução. Acompanhamos de perto cada etapa, contando com uma equipe
+                dedicada que supervisionou tanto os serviços internos, como a remoção de
+                forros, instalações e marcenaria, quanto os serviços terceirizados,
+                incluindo elétrica, hidráulica, gesso, pintura, ar condicionado e
+                revestimentos, entre outros.
+                <br />
+                <br />
+                Durante o processo, realizamos uma significativa reestruturação do
+                layout, com destaque para a expansão da recepção e do consultório, a
+                reforma dos banheiros e a criação de um lounge de descanso e massagem,
+                proporcionando aos pacientes um ambiente acolhedor e tranquilo enquanto
+                aguardam os procedimentos. Além disso, aprimoramos a sala de anestesia
+                com novo mobiliário e design, aumentamos a capacidade de armazenamento
+                com a instalação de mais armários e readequamos a copa, tornando-a mais
+                funcional e agradável para os clientes.
+                <br />
+                <br />
+                Todas as áreas receberam melhorias, incluindo a substituição do piso,
+                forro, ar condicionado e toda a marcenaria, mantendo apenas a estrutura
+                original. Até mesmo as janelas, anteriormente pretas, foram modificadas
+                para combinar com a nova estética das paredes. O resultado final é um
+                espaço completamente renovado e adaptado às necessidades dos nossos
+                clientes e pacientes.
+            </>
+        ),
         emphasisContent: true,
         coverImage: Cover2,
         gallery: [GalleryExample1, GalleryExample2, GalleryExample3],

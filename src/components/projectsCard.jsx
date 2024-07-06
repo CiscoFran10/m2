@@ -12,22 +12,29 @@ import { Icons } from "./icons";
 export function ProjectCard({
   title,
   endpoint,
-  description,
-  emphasisContent,
   coverImage,
   category,
-  locationType,
 }) {
   const pathname = usePathname();
 
+  const categoryLabels = {
+    onGoing: 'EM ANDAMENTO',
+    residential: 'RESIDENCIAL',
+    business: 'COMERCIAL',
+  };
+
+  const getCategoryLabel = (category) => {
+    return categoryLabels[category];
+  };
+
   return (
-    <Card className="grid overflow-hidden border-none rounded-none group">
+    <Card className="grid overflow-hidden border-none rounded-none group w-full h-full">
       <Image
         src={coverImage}
         alt={title}
         width={403}
-        height={670}
-        className="w-full h-full col-start-1 col-end-3 row-start-1 row-end-3"
+        height={670}   
+        className="w-full object-fill h-full col-start-1 col-end-3 row-start-1 row-end-3"
       />
 
       <div className="flex flex-col justify-end w-full col-start-1 col-end-3 row-start-1 row-end-3 transition-all duration-500 sm:opacity-0 bg-gradient-to-b from-black/10 to-black/90 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -37,7 +44,7 @@ export function ProjectCard({
         >
           <CardContent className="flex flex-col items-center w-full gap-5 p-0 pb-6 border-b border-gray-200 border-opacity-40">
             <h2 className="font-heading text-xs text-accent tracking-[0.3em]">
-              {locationType}
+              {getCategoryLabel(category)}
             </h2>
             <p className="text-3xl text-white font-bold tracking-[0.12em]">
               {title}
@@ -50,7 +57,7 @@ export function ProjectCard({
               size="auto"
               className="flex justify-center w-full transition duration-300 ease-in-out delay-150 scale-105 hover:scale-125"
             >
-              <Link href={`/projects/${endpoint}`}>
+              <Link href={`/projetos/${endpoint}`}>
                 <Icons.arrowRight className="text-white" />
               </Link>
             </Button>

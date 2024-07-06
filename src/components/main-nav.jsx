@@ -25,10 +25,10 @@ export function MainNav({ headerHasScrolled }) {
       </Link>
 
       <Link
-        href="/projects"
+        href="/projetos"
         className={cn(
           "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
-          pathname === "/projects"
+          pathname === "/projetos"
             ? "text-accent border-b-accent"
             : headerHasScrolled
               ? "text-primary hover:text-primary/80"

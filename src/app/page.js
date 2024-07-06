@@ -25,8 +25,9 @@ import { Icons } from "@/components/icons";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import Project from "./projects/[id]/page";
+import Project from "./projetos/[id]/page";
 import { ProjectCard } from "@/components/projectsCard";
+import projectsList from "@/lib/projectsData";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
 
@@ -201,46 +202,21 @@ export default function Home() {
               className="relative z-20 mt-16"
             >
               <CarouselContent className="-ml-0">
-                <CarouselItem className="relative pl-0 sm:basis-1/2 lg:basis-1/4">
-                  <ProjectCard
-                    locationType="EM ANDAMENTO"
-                    title="cotton house"
-                    coverImage={"/project-1.avif"}
-                    endpoint={"projeto-1"}
-                  />
-                </CarouselItem>
-                <CarouselItem className="relative pl-0 sm:basis-1/2 lg:basis-1/4">
-                  <ProjectCard
-                    locationType="EXTERIOR"
-                    title="cotton house"
-                    coverImage={"/project-2.avif"}
-                    endpoint={"projeto-2"}
-                  />
-                </CarouselItem>
-                <CarouselItem className="relative pl-0 sm:basis-1/2 lg:basis-1/4">
-                  <ProjectCard
-                    locationType="COMERCIAL"
-                    title="cotton house"
-                    coverImage={"/project-3.avif"}
-                    endpoint={"projeto-3"}
-                  />
-                </CarouselItem>
-                <CarouselItem className="relative pl-0 sm:basis-1/2 lg:basis-1/4">
-                  <ProjectCard
-                    locationType="RESIDENCIAL"
-                    title="cotton house"
-                    coverImage={"/project-4.avif"}
-                    endpoint={"projeto-4"}
-                  />
-                </CarouselItem>
-                <CarouselItem className="relative pl-0 sm:basis-1/2 lg:basis-1/4">
-                  <ProjectCard
-                    locationType="INTERIOR"
-                    title="cotton house"
-                    coverImage={"/project-5.avif"}
-                    endpoint={"projeto-5"}
-                  />
-                </CarouselItem>
+                {projectsList
+                  .filter((project) => project.showInHome)
+                  .map((project, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="relative pl-0 sm:basis-1/2 lg:basis-1/4"
+                    >
+                      <ProjectCard
+                        category={project.category}
+                        title={project.title}
+                        coverImage={project.coverImage}
+                        endpoint={project.endpoint}
+                      />
+                    </CarouselItem>
+                  ))}
               </CarouselContent>
 
               <CarouselIndicator />
@@ -253,7 +229,7 @@ export default function Home() {
                   size="lg"
                   className="flex-col gap-3 text-sm border-4 rounded-full sm:text-base sm:-translate-y-14 size-28 sm:size-40 border-muted"
                 >
-                  <Link href="/projects">
+                  <Link href="/projetos">
                     <ArrowUpIcon className="animate-bounce size-6 sm:size-8" />
                     Ver todos
                   </Link>
@@ -269,24 +245,20 @@ export default function Home() {
             </p>
 
             <div className="grid gap-20 mt-24 lg:grid-cols-3">
-
-              {homeData.values.map((value, index) =>
-                <div key={index} className="z-20 flex flex-col gap-4 p-6 border bg-secondary">
+              {homeData.values.map((value, index) => (
+                <div
+                  key={index}
+                  className="z-20 flex flex-col gap-4 p-6 border bg-secondary"
+                >
                   <div className="p-4 border rounded-full -mt-14 bg-secondary size-16">
                     <Image src="/quotes.png" alt="" width={32} height={32} />
                   </div>
                   <h3 className="text-2xl font-heading text-accent">
                     {value.title}
                   </h3>
-                  <p>
-                    {value.description}
-                  </p>
+                  <p>{value.description}</p>
                 </div>
-
-              )}
-
-
-
+              ))}
             </div>
           </section>
 
@@ -301,41 +273,50 @@ export default function Home() {
               </p>
 
               <div className="grid grid-cols-1 gap-10 mt-20 xs:grid-cols-2 lg:gap-20 md:grid-cols-3">
-
-
                 <div className="md:row-span-2">
                   <Image
                     className="w-full"
-                    src={homeData.news[0].cover}
-                    alt=""
+                    src={homeData.news[1].cover}
+                    alt={homeData.news[1].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[1].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[1].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[1].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
 
-
-                <div >
+                <div>
                   <Image
                     className="w-full md:aspect-square"
                     src={homeData.news[0].cover}
-                    alt=""
+                    alt={homeData.news[0].title}
                     width={300}
                     height={400}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[0].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[0].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[0].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
@@ -343,17 +324,23 @@ export default function Home() {
                 <div className="md:row-span-2">
                   <Image
                     className="w-full"
-                    src="/project-5.avif"
-                    alt=""
+                    src={homeData.news[3].cover}
+                    alt={homeData.news[3].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[3].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[3].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[3].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
@@ -361,17 +348,23 @@ export default function Home() {
                 <div className="md:row-span-2">
                   <Image
                     className="w-full"
-                    src="/project-1.avif"
-                    alt=""
+                    src={homeData.news[5].cover}
+                    alt={homeData.news[5].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[5].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[5].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[5].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
@@ -379,17 +372,24 @@ export default function Home() {
                 <div className="md:row-span-2 md:row-start-2 md:col-start-2">
                   <Image
                     className="w-full md:aspect-square"
-                    src="/project-5.avif"
-                    alt=""
+                    src={homeData.news[2].cover}
+                    alt={homeData.news[2].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {" "}
+                    {homeData.news[2].title}{" "}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[2].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[2].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
@@ -397,17 +397,23 @@ export default function Home() {
                 <div className="md:row-span-2">
                   <Image
                     className="w-full "
-                    src="/project-4.avif"
-                    alt=""
+                    src={homeData.news[6].cover}
+                    alt={homeData.news[6].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[6].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[6].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[6].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
@@ -415,17 +421,23 @@ export default function Home() {
                 <div className="md:row-start-4 md:row-span-2 md:col-start-2">
                   <Image
                     className="w-full md:aspect-square"
-                    src="/project-3.avif"
-                    alt=""
+                    src={homeData.news[4].cover}
+                    alt={homeData.news[4].title}
                     width={300}
                     height={200}
                   />
-                  <h3 className="mt-2 text-secondary">Arquiteura moderna</h3>
+                  <h3 className="mt-2 text-secondary">
+                    {homeData.news[4].title}
+                  </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
                     <CalendarIcon />
-                    18 de maio, 2023
+                    {homeData.news[4].date}
                   </span>
-                  <a className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit">
+                  <a
+                    href={homeData.news[4].link}
+                    target="_blank"
+                    className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
+                  >
                     LER MAIS
                   </a>
                 </div>
