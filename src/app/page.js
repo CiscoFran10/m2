@@ -304,7 +304,7 @@ export default function Home() {
                     className="w-full md:aspect-square"
                     src={homeData.news[0].cover}
                     alt={homeData.news[0].title}
-                    width={300}
+                    width={600}
                     height={400}
                     quality={100}
                   />
@@ -329,8 +329,8 @@ export default function Home() {
                     className="w-full"
                     src={homeData.news[3].cover}
                     alt={homeData.news[3].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
@@ -354,8 +354,8 @@ export default function Home() {
                     className="w-full"
                     src={homeData.news[5].cover}
                     alt={homeData.news[5].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
@@ -379,8 +379,8 @@ export default function Home() {
                     className="w-full md:aspect-square"
                     src={homeData.news[2].cover}
                     alt={homeData.news[2].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
@@ -405,8 +405,8 @@ export default function Home() {
                     className="w-full "
                     src={homeData.news[6].cover}
                     alt={homeData.news[6].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
@@ -430,8 +430,8 @@ export default function Home() {
                     className="w-full md:aspect-square"
                     src={homeData.news[4].cover}
                     alt={homeData.news[4].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
