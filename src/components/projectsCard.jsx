@@ -33,7 +33,8 @@ export function ProjectCard({
         src={coverImage}
         alt={title}
         width={403}
-        height={670}   
+        height={670}
+        quality={100}
         className="w-full object-fill h-full col-start-1 col-end-3 row-start-1 row-end-3"
       />
 

@@ -41,22 +41,21 @@ const Project = () => {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={handleOpenChange} >
-      <DialogContent className="bg-transparent sm:max-w-[1200px] w-[85vw] h-[85vh]: border-none">
+        <DialogContent className="bg-transparent sm:max-w-[1200px] w-[85vw] h-[85vh]: border-none">
           <Carousel opts={{ startIndex: currentImageIndex }} className="mx-2 mt-8 sm:mx-6">
             <CarouselContent className="bg-transparent border-none">
               {currentProject.gallery.map((image, index) => (
-                <CarouselItem key={index} className="w-full">
+                <CarouselItem key={index} className="w-full flex items-center">
                   <Image
                     src={image}
                     alt={currentProject.title}
-                    width={633}
-                    height={554}
-                    className="w-full h-full max-h-[85vh] object-contain"
+                    width={1200}
+                    height={900}
+                    objectFit="contain"
+                    quality={100}
+                    className="max-h-[85vh] object-contain"
                   />
-
                 </CarouselItem>
-
-
               ))}
             </CarouselContent>
             <CarouselPrevious className='-left-12' />
@@ -100,6 +99,7 @@ const Project = () => {
                   alt={currentProject.title}
                   width={633}
                   height={554}
+                  quality={100}
                   className="w-full h-full"
                 />
               </motion.li>
@@ -116,6 +116,7 @@ const Project = () => {
                       alt={currentProject.title}
                       width={633}
                       height={554}
+                      quality={100}
                       className="w-full h-full"
                     />
                   </motion.li>

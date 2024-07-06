@@ -143,8 +143,9 @@ export default function Home() {
                 className="relative w-full"
                 src={homeData.services.image}
                 alt="Nossos servicos"
-                width={500}
-                height={650}
+                width={900}
+                height={1350}
+                quality={100}
               />
 
               <Accordion defaultValue={["1"]} type="multiple" collapsible>
@@ -251,7 +252,7 @@ export default function Home() {
                   className="z-20 flex flex-col gap-4 p-6 border bg-secondary"
                 >
                   <div className="p-4 border rounded-full -mt-14 bg-secondary size-16">
-                    <Image src="/quotes.png" alt="" width={32} height={32} />
+                    <Image src="/quotes.png" alt="" width={32} height={32} quality={100} />
                   </div>
                   <h3 className="text-2xl font-heading text-accent">
                     {value.title}
@@ -278,8 +279,9 @@ export default function Home() {
                     className="w-full"
                     src={homeData.news[1].cover}
                     alt={homeData.news[1].title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[1].title}
@@ -304,6 +306,7 @@ export default function Home() {
                     alt={homeData.news[0].title}
                     width={300}
                     height={400}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[0].title}
@@ -328,6 +331,7 @@ export default function Home() {
                     alt={homeData.news[3].title}
                     width={300}
                     height={200}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[3].title}
@@ -352,6 +356,7 @@ export default function Home() {
                     alt={homeData.news[5].title}
                     width={300}
                     height={200}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[5].title}
@@ -376,6 +381,7 @@ export default function Home() {
                     alt={homeData.news[2].title}
                     width={300}
                     height={200}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {" "}
@@ -401,6 +407,7 @@ export default function Home() {
                     alt={homeData.news[6].title}
                     width={300}
                     height={200}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[6].title}
@@ -425,6 +432,7 @@ export default function Home() {
                     alt={homeData.news[4].title}
                     width={300}
                     height={200}
+                    quality={100}
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[4].title}
@@ -452,8 +460,9 @@ export default function Home() {
                   className="relative z-30 object-cover object-center w-full h-full lg:-translate-y-10"
                   src={homeData.team.image}
                   alt="Time M ao quadrado"
-                  width={300}
-                  height={500}
+                  width={900}
+                  height={1200}
+                  quality={100}
                 />
               </div>
               <span className="hidden lg:block w-full h-px bg-accent flex-[0.2]"></span>
