@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import SocialLinks from "@/components/social-links";
 import Image from "next/image";
 import {
@@ -24,35 +23,10 @@ import { ArrowUpIcon, CalendarIcon } from "@radix-ui/react-icons";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { AnimatePresence, motion } from "framer-motion";
-import Project from "./projetos/[id]/page";
+import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/projectsCard";
 import projectsList from "@/lib/projectsData";
 import { cn } from "@/lib/utils";
-import { X } from "lucide-react";
-
-const banners = [
-  {
-    title: (
-      <>
-        Contruindo sua visão, <br /> criando realidade
-      </>
-    ),
-    description:
-      "Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.",
-    image: "/banner.png",
-  },
-  {
-    title: (
-      <>
-        Transformando ideias, <br /> em estruturas
-      </>
-    ),
-    description:
-      "Bem-vindo ao nosso mundo de maravilhas arquitetônicas, onde a criatividade encontra a funcionalidade.",
-    image: "/edificio.jpg",
-  },
-];
 
 const container = {
   show: {
@@ -62,10 +36,6 @@ const container = {
   },
 };
 
-const carousel_item = {
-  hidden: { opacity: 0, x: -40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4 } },
-};
 
 export default function Home() {
   const [current, setCurrent] = React.useState(0);
