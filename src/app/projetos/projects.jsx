@@ -21,7 +21,7 @@ function Projects() {
 
   return (
     <>
-      <div className="w-full p-2 overflow-x-scroll">
+      <div className="w-full p-2 overflow-x-scroll sm:overflow-x-hidden">
         <div className="flex items-center gap-3 sm:justify-center">
           {filterButtons.map((button) => (
             <React.Fragment key={button.value}>
@@ -35,10 +35,10 @@ function Projects() {
               </Button>
               {button.value !==
                 filterButtons[filterButtons.length - 1].value && (
-                <span className="block font-normal font-heading text-primary/80">
-                  /
-                </span>
-              )}
+                  <span className="block font-normal font-heading text-primary/80">
+                    /
+                  </span>
+                )}
             </React.Fragment>
           ))}
         </div>
