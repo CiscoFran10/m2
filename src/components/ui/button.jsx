@@ -20,9 +20,9 @@ const buttonVariants = cva(
         transparent:
           "border border-input text-white bg-transparentt hover:bg-white hover:text-black",
         filter:
-          "font-heading font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary/80 hover:text-primary",
+          "font-heading text-xs sm:text-base font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary/80 hover:text-primary",
         filterActive:
-          "font-heading font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary border-b-primary",
+          "font-heading text-xs sm:text-base font-normal tracking-wider border-b-2 border-b-transparent transition-colors text-primary border-b-primary",
         neutral:
           "font-heading font-bold tracking-wider border-none bg-transparent text-white",
       },
