@@ -8,12 +8,13 @@ import { ArrowDownIcon, ArrowUpIcon } from 'lucide-react';
 
 const ProjectGallery = ({ currentProject, handleOpenImage }) => {
   const [hideShowAll, setHideShowAll] = React.useState(false);
+  const [isScreenSmall, setIsScreenSmall] = React.useState(window.innerWidth < 768);
 
   const handleToggleShowAll = () => {
     setHideShowAll((prevState) => {
       if (prevState) {
         window.scrollTo({
-          top: 0,
+          top: 150,
           behavior: 'smooth',
         });
       }
@@ -25,13 +26,27 @@ const ProjectGallery = ({ currentProject, handleOpenImage }) => {
     ? currentProject.gallery
     : currentProject.gallery.slice(0, 3);
 
+
+    React.useEffect(() => {
+    const handleResize = () => {
+      setIsScreenSmall(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="relative h-fit">
       <motion.ul
         transition={{ duration: 1 }}
-        className={`relative w-full flex scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent flex-col gap-12 sm:gap-10 md:gap-16 ${
-          hideShowAll ? 'h-full' : 'md:max-h-[820px] md:overflow-y-scroll pr-1'
-        }`}>
+        className={`relative w-full flex scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent flex-col gap-12 sm:gap-10 md:gap-16 ${hideShowAll && isScreenSmall ? 'h-full' : 'md:max-h-[820px] md:overflow-y-scroll pr-1'
+          }`}>
         <AnimatePresence>
           {imagesToDisplay.map((image, index) => (
             <motion.li
