@@ -425,7 +425,7 @@ export default function Home() {
 
           <section className="container mt-32 ">
             <div className="flex flex-col items-center lg:flex-row">
-              <div className="relative self-stretch flex-1 min-h-full before:z-20 before:bg-white before:w-4/5 before:h-full lg:before:border before:border-accent before:absolute before:top-0 before:-right-10">
+              <div className="relative self-stretch flex-1 min-h-full">
                 <Image
                   className="relative z-30 object-cover object-center w-full h-full lg:-translate-y-10"
                   src={homeData.team.image}
