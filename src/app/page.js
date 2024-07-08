@@ -103,10 +103,10 @@ export default function Home() {
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "1000px" }}
-            id="about"
+
             className="container flex flex-col min-h-screen gap-5 pt-32 "
           >
-            <h2 className="title">SERVIÇOS</h2>
+            <h2 id="about" className="title">SERVIÇOS</h2>
 
             <div className="grid gap-10 mt-10 md:grid-cols-[0.8fr_1fr]">
               <Image
@@ -116,6 +116,7 @@ export default function Home() {
                 width={900}
                 height={1350}
                 quality={100}
+
               />
 
               <Accordion defaultValue={["1"]} type="multiple" collapsible>
@@ -234,7 +235,7 @@ export default function Home() {
           </section>
 
           <section
-            id="imprensa"
+
             className="py-20 mt-32 bg-[url(/press.jpg)] bg-center relative z-20"
           >
             <div className="container">
@@ -278,7 +279,8 @@ export default function Home() {
                     height={400}
                     quality={100}
                   />
-                  <h3 className="mt-2 text-secondary">
+
+                  <h3 id="imprensa" className="mt-2 text-secondary">
                     {homeData.news[0].title}
                   </h3>
                   <span className="flex items-center gap-2 text-xs text-muted">
@@ -302,6 +304,7 @@ export default function Home() {
                     width={600}
                     height={400}
                     quality={100}
+
                   />
                   <h3 className="mt-2 text-secondary">
                     {homeData.news[3].title}
@@ -362,6 +365,7 @@ export default function Home() {
                     {homeData.news[2].date}
                   </span>
                   <a
+
                     href={homeData.news[2].link}
                     target="_blank"
                     className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
@@ -387,6 +391,7 @@ export default function Home() {
                     {homeData.news[6].date}
                   </span>
                   <a
+
                     href={homeData.news[6].link}
                     target="_blank"
                     className="mt-4 text-xs tracking-wider border-b border-white cursor-pointer text-secondary font-heading hover:border-accent hover:text-muted w-fit"
@@ -448,7 +453,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="contact" className="container mt-32">
+          <section className="container mt-32">
             <h2 className="title">CONTATO</h2>
             <p className="mt-4 text-3xl font-bold sm:text-5xl">
               Entre em contato
@@ -494,6 +499,7 @@ export default function Home() {
                     Rua Gomes de Carvalho, 621 - 12º andar - cjto. 1201
                   </span>
                   <a
+
                     className="flex items-center gap-2 text-accent"
                     target="_blank"
                     href="https://maps.app.goo.gl/T9q41LCMNnkS8yts5"
@@ -516,6 +522,7 @@ export default function Home() {
             </div>
           </section>
         </div>
+
       </main>
     </>
   );

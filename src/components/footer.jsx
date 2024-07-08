@@ -27,6 +27,7 @@ const Footer = () => {
 
             <Link
               href="/#about"
+              scroll={true}
               className={
                 'font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent'
               }>
@@ -43,6 +44,7 @@ const Footer = () => {
 
             <Link
               href="/#imprensa"
+              scroll={true}
               className={
                 'font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent'
               }>
@@ -51,6 +53,7 @@ const Footer = () => {
 
             <Link
               href="/#contact"
+              scroll={true}
               className={
                 'font-heading text-muted tracking-wider border-b-2 border-b-transparent transition-colors hover:text-accent'
               }>
@@ -64,7 +67,7 @@ const Footer = () => {
             © 2024 M2 Arquitetura. Todos os direitos reservados.
           </p>
 
-          <SocialLinks className={'flex-row'} />
+          <SocialLinks id="contact" className={'flex-row'} />
         </div>
       </div>
     </footer>

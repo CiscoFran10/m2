@@ -52,6 +52,7 @@ export function MobileNav({ headerHasScrolled }) {
 
           <Link
             href="/#about"
+            scroll={true}
             className={cn(
               "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
               hash === "about"
@@ -76,6 +77,7 @@ export function MobileNav({ headerHasScrolled }) {
 
           <Link
             href="/#imprensa"
+            scroll={true}
             className={cn(
               "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
               hash === "imprensa"
@@ -88,6 +90,7 @@ export function MobileNav({ headerHasScrolled }) {
 
           <Link
             href="/#contact"
+            scroll={true}
             className={cn(
               "font-heading tracking-wider border-b-2 border-b-transparent transition-colors hover:text-primary/80",
               hash === "contact"

@@ -984,7 +984,7 @@ const projectsList = [
         category: "business",
     },
     {
-        title: "CLÍNICA FRED LARA",
+        title: "CLÍNICA FL",
         endpoint: "comercial-clinica-fred-lara",
         description: (
             <>
@@ -1021,7 +1021,7 @@ const projectsList = [
         category: "business",
     },
     {
-        title: "VR",
+        title: "VR GAMES",
         endpoint: "em-andamento-vr",
         description: defaultOnGoingDescription,
         showInHome: false,
@@ -1139,7 +1139,7 @@ const projectsList = [
         category: "residential",
     },
     {
-        title: "CV",
+        title: "NS",
         endpoint: "residencial-cv",
         description: (
             <>
