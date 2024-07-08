@@ -453,7 +453,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="container mt-32">
+          <section className="container mt-44">
             <h2 className="title">CONTATO</h2>
             <p className="mt-4 text-3xl font-bold sm:text-5xl">
               Entre em contato
